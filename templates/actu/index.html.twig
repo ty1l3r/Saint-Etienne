@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+
+
+
+        {% include "partials/menu1.html.twig" %}
+
+      <div class="row" id="1" style="margin: 0px;margin-left: 15px;margin-right: 15px; max-height:auto">
+        <div class="col">
+
+            <div class="card border-dark"
+                style="background-color: #ffffff;margin-top: 15%;margin-bottom:50px">
+                <div class="card-body">
+                    <div class="row" style="margin-top: 15px;">
+                        <div class="col">
+
+
+                        <!-- CONTENU-->
+
+                {% for renduAll in renduAlls  %}
+
+                    {% if renduAll.rendu == 1 %}
+                    {% include "home/-infoImgPortrait.html.twig" %}
+                    {% elseif renduAll.rendu == 2 %}
+                    {% include "home/-infoImgPaysage.html.twig" %}
+                    {% elseif renduAll.rendu == 3 %}
+                    {% include "home/-rdvImgPortrait.html.twig" %}
+                    {% elseif renduAll.rendu == 4 %}
+                    {% include "home/-rdvImgPaysage.html.twig" %}
+                    {% elseif renduAll.rendu == 5 %}
+                    {% include "home/-imgSeulePaysage.html.twig" %}
+                    {% elseif renduAll.rendu == 6 %}
+                    {% include "home/-imgSeulePortrait.html.twig" %}
+                    {% elseif renduAll.rendu == 7 %}
+                    {% include "home/-maParoisse.html.twig" %}
+                    {% elseif renduAll.rendu == 8 %}
+                    {% include "home/-texte.seul.html.twig" %}
+
+                    {% endif %}
+
+            {% endfor %}
+
+
+
+   
+                        
+                        <!-- EO CONTENU-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-xl-1 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3" id="contentColDroite" style="padding: 0px;">
+</div>
+</div>
+
+<!-- ======================-->
+
+
+{% endblock %}

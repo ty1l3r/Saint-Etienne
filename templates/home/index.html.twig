@@ -3,63 +3,50 @@
 {% block title %}Bienvenue{% endblock %}
 
 {% block body %}
- {% include "partials/menu.html.twig" %}
-<!--CAROUSEL-->
-{% include "partials/carousel.html.twig" %}
-<!--Eo Carousel-->
+    {% include "partials/menu.html.twig" %}
+    <!--CAROUSEL-->
+    {% include "partials/carousel.html.twig" %}
+    <!--Eo Carousel-->
 
-<div class="row" id="CONTENT" style="margin: 0px;margin-left: 0px;margin-right: 0px;">
 
-   <!-- COLONE DE GAUCHE-->
-        <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 order-1 order-sm-1 order-md-3 order-lg-1 order-xl-1"
-        id="contentColGauche" style="padding: 0px;">
+  <div class="row" id="CONTENT" style="margin: 0px;margin-left: 0px;margin-right: 0px;">
+        <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 order-1 order-sm-1 order-md-3 order-lg-1 order-xl-1" id="contentColGauche" style="padding: 0px;">
         </div>
-    <!--EO Colone de GAUCHE-->
-
-        <!--COLONE CENTRALE-->
-        <div class="col-11 col-sm-11 col-md-12 col-lg-10 col-xl-9 order-1 order-sm-1 order-md-1 order-lg-2 order-xl-2"
-            id="contentColCONTENT" style="padding: 0px;">
+        <div class="col-11 col-sm-11 col-md-12 col-lg-10 col-xl-8 order-1 order-sm-1 order-md-1 order-lg-2 order-xl-2" id="contentColCONTENT" style="padding: 0px;">
             <div class="row" id="1" style="margin: 0px;margin-left: 15px;margin-right: 15px;">
-           
                 <div class="col">
-                
-            {% for renduAll in renduAlls  %}
+    
+                    
+                {% for renduAll in renduAlls  %}
 
-                    {% if renduAll.rendu == 1 %}
-                    {% include "home/-infoImgPortrait.html.twig" %}
-                    {% elseif renduAll.rendu == 2 %}
-                    {% include "home/-infoImgPaysage.html.twig" %}
-                    {% elseif renduAll.rendu == 3 %}
-                    {% include "home/-rdvImgPortrait.html.twig" %}
-                    {% elseif renduAll.rendu == 4 %}
-                    {% include "home/-rdvImgPaysage.html.twig" %}
-                    {% elseif renduAll.rendu == 5 %}
-                    {% include "home/-imgSeulePaysage.html.twig" %}
-                    {% elseif renduAll.rendu == 6 %}
-                    {% include "home/-imgSeulePortrait.html.twig" %}
-                    {% elseif renduAll.rendu == 7 %}
-                    {% include "home/-maParoisse.html.twig" %}
-                    {% elseif renduAll.rendu == 8 %}
-                    {% include "home/-texte.seul.html.twig" %}
+                         {% if renduAll.rendu == 1 %}  
+                         {% include "home/-infoImgPortrait.html.twig" %}   
+                          {% elseif renduAll.rendu == 2 %}  
+                          {% include "home/-infoImgPaysage.html.twig" %}    
+                          {% elseif renduAll.rendu == 3 %}  
+                          {% include "home/-rdvImgPortrait.html.twig" %}   
+                           {% elseif renduAll.rendu == 4 %}  
+                          {% include "home/-rdvImgPaysage.html.twig" %}   
+                          {% elseif renduAll.rendu == 5 %}  
+                         {% include "home/-imgSeulePaysage.html.twig" %} 
+                         {% elseif renduAll.rendu == 6 %} 
+                         {% include "home/-imgSeulePortrait.html.twig" %} 
+                         {% elseif renduAll.rendu == 7 %}  
+                        {% include "home/-maParoisse.html.twig" %}
+                         {% elseif renduAll.rendu == 8 %}  
+                         {% include "home/-texte.seul.html.twig" %}        
 
-                    {% endif %}
+                          {% endif %}    
 
-            {% endfor %}
+                {% endfor %}
 
-            
                 </div>
-                <!--EOcol-->
             </div>
         </div>
-        <!--EO Colone Centrale-->
-
-     <!-- COLONE DE DROITE-->
-    <div class="col-xl-1 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3" id="contentColDroite"
-        style="padding: 0px;">
-    </div>
-    <!--EO Colone de DROITE-->
-
-</div>
+        <div class="col-xl-1 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3" id="contentColDroite" style="padding: 0px;">
+        </div>
+    </div>           
+  
 
 {% endblock %}
 

@@ -12,17 +12,13 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Datas;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-
 class HomeController extends AbstractController
 {
- 
-
 
     /**
      *  @Route ("/", name ="home")

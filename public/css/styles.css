@@ -18,4 +18,50 @@ body {
   #pconfsucces {
     text-align: center;
   }
+
+  .img-responsive{
+    max-width: 100%;
+    -ms-interpolation-mode: bicubic;
+    image-rendering: optimizeQuality;  
+  }
+  .imgPortrait{
+    max-width: 300px;
+    max-height: auto;
+  }
+
+  @media (max-width:767px) {
+    .imgPortrait{
+      max-width: 400px;
+      max-height: auto;
+    }
+  }
+
+  @media (min-width:1400px) {
+    .imgPortrait{
+      max-width: 400px;
+      max-height: auto;
+    }
+  }
+
+  .imgPortrait1{
+    max-width: 300px;
+    max-height: auto;
+  }
+
+  @media (max-width:767px) {
+    .imgPortrait1{
+      max-width: 400px;
+      max-height: auto;
+    }
+  }
+
+  @media (min-width:1400px) {
+    .imgPortrait1{
+      max-width: 500px;
+      max-height: auto;
+    }
+  }
+ 
+  
+
   

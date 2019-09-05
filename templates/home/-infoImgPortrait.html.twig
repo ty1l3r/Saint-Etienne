@@ -1,23 +1,43 @@
 
-<div class="card border-dark" style="background-color: #ffffff;margin-top: 10px;margin-right: -24px;">
+
+
+<div class="card border-dark" id="infoImgPortrait" style="background-color: #ffffff;margin-top: 10px;margin-right: 0px;">
     <div class="card-body">
-        <h4 class="text-primary card-title"
-            style="font-family: 'Roboto Condensed', sans-serif;color: rgb(18,64,111);margin-bottom: -3px;">
-            {{renduAll.title}}</h4>
-        <h4 class="text-primary card-title"
-            style="font-family: 'Roboto Condensed', sans-serif;color: rgb(0,0,0);font-size: 12px;">posté le
-            {{renduAll.createdAt | date('d/m/Y')}} à {{renduAll.createdAt | date('H:i')}}</h4>
-        <h6 class="text-secondary card-subtitle mb-2"
-            style="font-family: 'Roboto Condensed', sans-serif;color: rgb(24,133,230);margin-bottom: 64px;">
-            <strong>{{renduAll.subtitle}}</strong></h6>
         <div class="row" style="margin-top: 20px;">
-            <div class="col-md-12 col-lg-5 col-xl-4 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center"
-                style="margin-top: 0px;margin-bottom: 10px;"><img class="img-fluid" id="imgPortrait"
-                    src="{{renduAll.imgPortrait}}"></div>
-            <div class="col-md-12 col-lg-7 col-xl-7">
-                <p class="border rounded border-info" id="content"
-                    style="margin-bottom: 7px;padding: 10px;padding-right: 10px;margin-right: 15px;">
-                    {{renduAll.content}}<br></p>
+            
+            <div class=" 
+            col-lg-6
+            col-xl-5
+            col-md-6
+            col-sm-12
+            d-flex 
+            d-sm-flex 
+            d-lg-flex 
+            d-xl-flex 
+            justify-content-center 
+            justify-content-sm-center 
+            justify-content-lg-center 
+            align-items-lg-center 
+            justify-content-xl-center 
+            order-2" 
+
+            style="margin-top: 8px;margin-bottom: 10px;">
+            <img class="img-fluid img-responsive imgPortrait" src="{{renduAll.imgPortrait}}" style="margin-top:-3px;" />
+            </div>
+
+            <div class="
+            col-sm-12
+            col-lg-6
+            col-xl-7
+            col-md-6
+            order-1
+            ">
+                <h4 class="text-primary" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(18,64,111);margin-bottom: -3px;">{{renduAll.title}}</h4>
+                <h4 class="text-primary" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(0,0,0);font-size: 12px;">posté le
+            {{renduAll.createdAt | date('d/m/Y')}} à {{renduAll.createdAt | date('H:i')}}</h4>
+                <hr />
+                <h6 class="text-secondary mb-2" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(24,133,230);margin-bottom: 64px;padding-right: 15px;"><strong>{{renduAll.subtitle}}</strong></h6>
+                <p class="border rounded border-info" id="content" style="margin-bottom: 7px;padding: 10px;padding-right: 10px;margin-right: 15px;"> {{renduAll.content}}<br /></p>
             </div>
         </div>
     </div>
