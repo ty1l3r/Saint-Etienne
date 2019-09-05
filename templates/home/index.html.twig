@@ -1,0 +1,165 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue{% endblock %}
+
+{% block body %}
+ {% include "partials/menu.html.twig" %}
+<!--CAROUSEL-->
+{% include "partials/carousel.html.twig" %}
+<!--Eo Carousel-->
+
+<div class="row" id="CONTENT" style="margin: 0px;margin-left: 0px;margin-right: 0px;">
+
+   <!-- COLONE DE GAUCHE-->
+        <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 order-1 order-sm-1 order-md-3 order-lg-1 order-xl-1"
+        id="contentColGauche" style="padding: 0px;">
+        </div>
+    <!--EO Colone de GAUCHE-->
+
+        <!--COLONE CENTRALE-->
+        <div class="col-11 col-sm-11 col-md-12 col-lg-10 col-xl-9 order-1 order-sm-1 order-md-1 order-lg-2 order-xl-2"
+            id="contentColCONTENT" style="padding: 0px;">
+            <div class="row" id="1" style="margin: 0px;margin-left: 15px;margin-right: 15px;">
+           
+                <div class="col">
+                
+            {% for renduAll in renduAlls  %}
+
+                    {% if renduAll.rendu == 1 %}
+                    {% include "home/-infoImgPortrait.html.twig" %}
+                    {% elseif renduAll.rendu == 2 %}
+                    {% include "home/-infoImgPaysage.html.twig" %}
+                    {% elseif renduAll.rendu == 3 %}
+                    {% include "home/-rdvImgPortrait.html.twig" %}
+                    {% elseif renduAll.rendu == 4 %}
+                    {% include "home/-rdvImgPaysage.html.twig" %}
+                    {% elseif renduAll.rendu == 5 %}
+                    {% include "home/-imgSeulePaysage.html.twig" %}
+                    {% elseif renduAll.rendu == 6 %}
+                    {% include "home/-imgSeulePortrait.html.twig" %}
+                    {% elseif renduAll.rendu == 7 %}
+                    {% include "home/-maParoisse.html.twig" %}
+                    {% elseif renduAll.rendu == 8 %}
+                    {% include "home/-texte.seul.html.twig" %}
+
+                    {% endif %}
+
+            {% endfor %}
+
+            
+                </div>
+                <!--EOcol-->
+            </div>
+        </div>
+        <!--EO Colone Centrale-->
+
+     <!-- COLONE DE DROITE-->
+    <div class="col-xl-1 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3" id="contentColDroite"
+        style="padding: 0px;">
+    </div>
+    <!--EO Colone de DROITE-->
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+{# {% if renduAll.imgPortrait %}
+        
+    <div class="row" id="CONTENT" style="margin: 0px;margin-left: 0px;margin-right: 0px;">
+        <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 order-1 order-sm-1 order-md-3 order-lg-1 order-xl-1" id="contentColGauche" style="padding: 0px;"></div>
+        <div class="col-11 col-sm-11 col-md-12 col-lg-10 col-xl-9 order-1 order-sm-1 order-md-1 order-lg-2 order-xl-2" id="contentColCONTENT" style="padding: 0px;">
+            <div class="row" id="1" style="margin: 0px;margin-left: 15px;margin-right: 15px;">
+                <div class="col">
+                    <div class="card border-dark" style="background-color: #ffffff;margin-top: 10px;margin-right: -24px;margin-left: 0px;">
+                        <div class="card-body">
+                            <h4 class="text-primary card-title" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(18,64,111);">RENDU 1 {{renduAll.title}}</h4>
+                            <h6 class="text-secondary card-subtitle mb-2" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(24,133,230);margin-bottom: 64px;"><strong>{{renduAll.subTitle}}</strong></h6>
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col-md-12 col-lg-5 col-xl-4 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center"
+                                    style="margin-top: 0px;margin-bottom: 10px;"><img class="img-fluid d-xl-flex" id="imgPortrait" src="{{renduAll.imgPortrait}}"></div>
+                                <div class="col-md-12 col-lg-7 col-xl-7">
+                                   
+                                 
+                                    <p class="border rounded border-info" id="content" style="margin-bottom: 7px;padding: 10px;padding-right: 10px;margin-right: 15px;">{{renduAll.content}}<br></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-1 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3" id="contentColDroite" style="padding: 0px;"></div>
+    </div>
+ 
+    {% elseif renduAll.imgPaysage %}
+
+        <div class="row" id="CONTENT" style="margin: 0px;margin-left: 0px;margin-right: 0px;">
+        <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 order-1 order-sm-1 order-md-3 order-lg-1 order-xl-1" id="contentColGauche" style="padding: 0px;"></div>
+        <div class="col-11 col-sm-11 col-md-12 col-lg-10 col-xl-9 order-1 order-sm-1 order-md-1 order-lg-2 order-xl-2" id="contentColCONTENT" style="padding: 0px;">
+            <div class="row" id="1" style="margin: 0px;margin-left: 15px;margin-right: 15px;">
+                <div class="col">
+                    <div class="card border-dark" style="background-color: #ffffff;margin-top: 10px;margin-right: -24px;margin-left: 0px;">
+                        <div class="card-body">
+                            <h4 class="text-primary card-title" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(18,64,111);">RENDU 1 {{renduAll.title}}</h4>
+                            <h6 class="text-secondary card-subtitle mb-2" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(24,133,230);margin-bottom: 64px;"><strong>{{renduAll.subTitle}}</strong></h6>
+                            <div class="row" style="margin-top: 10px;">
+                                <div class="col-md-12 col-lg-5 col-xl-4 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center"
+                                    style="margin-top: 0px;margin-bottom: 10px;"><img class="img-fluid d-xl-flex" id="imgPortrait" src="{{renduAll.imgPaysage}}"></div>
+                                <div class="col-md-12 col-lg-7 col-xl-7">
+                                   
+                                 
+                                    <p class="border rounded border-info" id="content" style="margin-bottom: 7px;padding: 10px;padding-right: 10px;margin-right: 15px;">{{renduAll.content}}<br></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-1 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3" id="contentColDroite" style="padding: 0px;"></div>
+    </div>
+
+    {% elseif renduAll.rendu == 8 %}
+
+    {{renduAll.title}}
+
+        
+        
+
+     {% endif %}
+ #}
+
+
+
+{# 
+{% if renduAll.imgPaysage  %}
+
+    <div class="col-md-12 col-lg-5 col-xl-4 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center"
+    style="margin-top: 0px;margin-bottom: 10px;"><img class="img-fluid d-xl-flex" id="imgPortrait"
+    src="{{renduAll.imgPaysage}}">
+    </div> 
+
+{% elseif renduAll.imgPortrait %}
+    
+    <div class="col-md-12 col-lg-5 col-xl-4 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center"
+    style="margin-top: 0px;margin-bottom: 10px;"><img class="img-fluid d-xl-flex" id="imgPortrait"
+    src="{{renduAll.imgPortrait}}">
+    </div> 
+
+{% endif %} #}
+
+
+
+
+{# {% include "home/infoImgPortrait.html.twig" %}
+{% include "home/infoImgPaysage.html.twig " %}  #}

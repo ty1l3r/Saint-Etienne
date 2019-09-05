@@ -1,0 +1,21 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<div class="container" style="margin-top:8%">
+
+    {{ form_start(form)}}
+
+    {{ form_widget(form)}}
+
+    <button type="submit" class="btn btn-primary">Valider</button>
+
+    {{form_end(form)}}
+
+</div>
+
+
+{% endblock %}

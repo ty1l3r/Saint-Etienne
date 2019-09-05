@@ -1,0 +1,383 @@
+.navigation-clean {
+  background: #fff;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  color: #333;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  margin-bottom: 0;
+}
+
+@media (min-width:768px) {
+  .navigation-clean {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.navigation-clean .navbar-brand {
+  font-weight: bold;
+  color: inherit;
+}
+
+.navigation-clean .navbar-brand:hover {
+  color: #222;
+}
+
+.navigation-clean .navbar-toggler {
+  border-color: #ddd;
+}
+
+.navigation-clean .navbar-toggler:hover, .navigation-clean .navbar-toggler:focus {
+  background: none;
+}
+
+.navigation-clean .navbar-toggler {
+  color: #888;
+}
+
+.navigation-clean .navbar-collapse, .navigation-clean .form-inline {
+  border-top-color: #ddd;
+}
+
+.navigation-clean.navbar-light .navbar-nav .nav-link.active, .navigation-clean.navbar-light .navbar-nav .nav-link.active:focus, .navigation-clean.navbar-light .navbar-nav .nav-link.active:hover {
+  color: #8f8f8f;
+  box-shadow: none;
+  background: none;
+  pointer-events: none;
+}
+
+.navigation-clean.navbar .navbar-nav .nav-link {
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.navigation-clean.navbar-light .navbar-nav .nav-link {
+  color: #465765;
+}
+
+.navigation-clean.navbar-light .navbar-nav .nav-link:focus, .navigation-clean.navbar-light .navbar-nav .nav-link:hover {
+  color: #37434d !important;
+  background-color: transparent;
+}
+
+.navigation-clean .navbar-nav > li > .dropdown-menu {
+  margin-top: -5px;
+  box-shadow: none;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.navigation-clean .dropdown-menu .dropdown-item:focus, .navigation-clean .dropdown-menu .dropdown-item {
+  line-height: 2;
+  color: #37434d;
+}
+
+.navigation-clean .dropdown-menu .dropdown-item:focus, .navigation-clean .dropdown-menu .dropdown-item:hover {
+  background: #eee;
+  color: inherit;
+}
+
+#carousel {
+  top: 0;
+  left: 0px;
+  z-index: 1;
+}
+
+@media (max-width: 991px) {
+  #colGauche {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 576px) {
+  #colCentral {
+  }
+}
+
+@media (min-width: 767px) {
+  .col.d-md-flex.d-xl-flex.justify-content-md-center.justify-content-lg-center.justify-content-xl-center {
+    background-color: rgba(255,255,255,0.92);
+  }
+}
+
+@media (max-width: 767px) {
+  .col.d-md-flex.d-xl-flex.justify-content-md-center.justify-content-lg-center.justify-content-xl-center {
+    background-color: rgba(255,255,255,0);
+  }
+}
+
+.navbar-light .navbar-toggler {
+  background-color: white;
+}
+
+@media (min-width: 300px) and (max-width: 594px) {
+  .navbar.navbar-light.navbar-expand-md.navigation-clean-search {
+    margin-left: -22px;
+  }
+}
+
+@media (min-width: 594px) and (max-width: 614px) {
+  .navbar.navbar-light.navbar-expand-md.navigation-clean-search {
+    margin-left: -7%;
+  }
+}
+
+@media (min-width: 614px) and (max-width: 636px) {
+  .navbar.navbar-light.navbar-expand-md.navigation-clean-search {
+    margin-left: -9%;
+  }
+}
+
+@media (min-width: 636px) and (max-width: 674px) {
+  .navbar.navbar-light.navbar-expand-md.navigation-clean-search {
+    margin-left: -13%;
+  }
+}
+
+@media (min-width: 674px) and (max-width: 702px) {
+  .navbar.navbar-light.navbar-expand-md.navigation-clean-search {
+    margin-left: -16%;
+  }
+}
+
+@media (min-width: 702px) and (max-width: 767px) {
+  .navbar.navbar-light.navbar-expand-md.navigation-clean-search {
+    margin-left: -20%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #imgPortrait {
+    /*max-width: 90%;*/
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  #imgPortrait {
+    max-width: 40%;
+    /*max-height: 32%;*/
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  #imgPortrait {
+    max-width: 40%;
+    /*max-height: 32%;*/
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  #imgPortrait {
+    /*max-width: 104%;*/
+    /*max-height: 15%;*/
+  }
+}
+
+#navcol-1 {
+  /*margin-left: -2%;*/
+}
+
+@media (max-width: 767px) {
+  #icone1 {
+    width: 21%;
+  }
+}
+
+@media (max-width: 767px) {
+  #icone2 {
+    width: 20%;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-expand-md .navbar-nav {
+    width: auto;
+    /*background-color: rgb(255,255,255);*/
+    /*position: fixed;*/
+    margin-left: -14px;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: 767px) {
+  #ic1 {
+    width: 75px;
+  }
+}
+
+@media (max-width: 767px) {
+  #ic1 {
+    width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  #ic1 {
+    width: 51px;
+    margin-left: 2px;
+  }
+}
+
+@media (min-width: 767px) {
+  #ic2 {
+    width: 75px;
+  }
+}
+
+@media (max-width: 767px) {
+  #ic2 {
+    width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  #ic2 {
+    width: 51px;
+    margin-left: 2px;
+  }
+}
+
+@media (min-width: 767px) {
+  #ic3 {
+    width: 75px;
+  }
+}
+
+@media (max-width: 767px) {
+  #ic3 {
+    width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  #ic3 {
+    width: 51px;
+    margin-left: 2px;
+  }
+}
+
+@media (min-width: 767px) {
+  #ic4 {
+    width: 75px;
+  }
+}
+
+@media (max-width: 767px) {
+  #ic4 {
+    width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  #ic4 {
+    width: 51px;
+    margin-left: 2px;
+  }
+}
+
+@media (min-width: 767px) {
+  #ic5 {
+    width: 75px;
+  }
+}
+
+@media (max-width: 767px) {
+  #ic5 {
+    width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  #ic5 {
+    width: 51px;
+    margin-left: 2px;
+  }
+}
+
+@media (min-width: 767px) {
+  #ic6 {
+    width: 75px;
+  }
+}
+
+@media (max-width: 767px) {
+  #ic6 {
+    width: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  #ic6 {
+    width: 51px;
+    margin-left: 2px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-light .navbar-toggler {
+    background-color: white;
+    margin: -1%;
+  }
+}
+
+@media (max-width: 767px) {
+  #link1 {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  #link2 {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  #link2 {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  #link3 {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  #link4 {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  #link5 {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 767px) {
+  #link6 {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  #1 {
+    margin-right: 47px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #1 {
+    margin-right: 47px !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .card.border-dark {
+  }
+}
+

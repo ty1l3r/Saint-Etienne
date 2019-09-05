@@ -1,0 +1,9 @@
+<div class="card border-dark" style="background-color: #ffffff;margin-top: 10px;margin-right: -24px;">
+    <div class="card-body">
+        <h4 class="text-primary card-title" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(18,64,111);margin-bottom: -3px;">{{renduAll.title}}</h4>
+        <h4 class="text-primary card-title" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(0,0,0);font-size: 12px;">posté le   {{renduAll.createdAt | date('d/m/Y')}} à {{renduAll.createdAt | date('H:i')}}</h4>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-12 col-lg-5 col-xl-12 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center" style="margin-top: 0px;margin-bottom: 10px;"><img class="img-fluid" id="imgPortrait" src="{{renduAll.imgPaysage}}" /></div>
+        </div>
+    </div>
+</div>
