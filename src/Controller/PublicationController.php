@@ -2,91 +2,64 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Selection;
 use App\Form\SelectionType;
-use Doctrine\Common\Collections\Expr\Value;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+
 
 class PublicationController extends AbstractController
 {   
 
+ 
     /**
      * @Route("/admin/create", name="accueil")
+     * 
+     * 
      */
     public function index(Request $request)
     {   
-        $selection = new Selection();
+        $selections = new Selection();
         $form = $this->createForm(SelectionType::class);
-        $form->handleRequest($request, $selection);
-
+        $form->handleRequest($request, $selections);
         
-        //recupération du choix utilisateur
-        $selection = $request->request->get('selection');
-        dump($selection);
-      
+        
         if ($form->isSubmitted() && $form->isValid()) {
+            
+            $selections = $request->request->get('selection');
+            dump($selections); 
+            $selections = $selections['selection'];
+            dump($selections); 
 
-        // if($selection->getTexteEtImg()){
-        //     dump($selection);
-        // }
-   
-        //reçois toutes les infromations du formulaire :    
-        // $form->getData();
-        // dump($form);
-
-        // isole le choix de l'utilisateur
-
-        // $form->$request->get('image');
-        // dump($form);
-           
-        // if($request->request->get('image')){
-            // return $this->redirectToRoute('home');
-       
-        // } else{
-        //     return $this->redirectToRoute('account_profile');
-        //  }
-        // if($form->getData('texteEtImage')){
-        //     return $this->redirectToRoute('autre');
-        // }
-        
-        //etc..
+            if($selections == ('image'))
+            {
+                return $this->redirectToRoute('form-imageSeule');
+            }
+            if($selections == ('texte'))
+            {
+                return $this->redirectToRoute('form-texteSeul');
+            }
+            if($selections == ('texteEtImg'))
+            {
+                return $this->redirectToRoute('');
+            }
+            if($selections == ('rdv'))
+            {
+                return $this->redirectToRoute('');
+            }
+            if($selections == ('maParoisse'))
+            {
+                return $this->redirectToRoute('');
+            }
 
         }
-
         return $this->render('publication/step1.html.twig', [
-        'form' => $form->createView() ,  
-        'selection' => $selection  
-    ]);
-    }
-
-//     /**
-//      * @Route("/admin/create", name="image")
-//      */
-//     public function selectImage(Request $request, Selection $selection =null)
-//     {   
-             
-//         $form = $this->createForm(SelectionType::class, $selection);
-//         $form->handleRequest($request); 
-        
-        
-//         if ($form->isSubmitted() && $form->isValid())
-//      {
-       
-//             return $this->redirectToRoute('form-texteSeul');
-            
-//     }
-        
-//         return $this->render('publication/step1.html.twig', [
-//         'form' => $form->createView(),
-    
-//     ]);
-// }
-        
+            'form' => $form->createView() ,  
+            'selection' => $selections  
+        ]);
+        }
 
 
 // =======FORMULAIRE EXTERIEURS=========
