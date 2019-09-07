@@ -16,17 +16,17 @@ class SelectionType extends AbstractType
             $builder  
             ->add('selection', ChoiceType::class, ['placeholder' => 'Choisissez une catégorie',
                     'choices'  => [
-                    'image' => 'image',
-                    'Texte' => 'texte',
-                    'Texte et image' => 'texteEtImg',
-                    'Manifestation ou Rendez-vous' => 'rdv',
-                    'Dernier numéro de "Ma Paroisse"' => 'maParoisse' ,     
+                    'Une image seule' => 'image',
+                    'Un texte seul' => 'texte',
+                    'Un texte accompagné d\'une image' => 'texteEtImg',
+                    'Un Rendez-vous & Manifestations' => 'rdv',
+                    '"Ma Paroisse" le dernier numéro' => 'maParoisse' ,     
                 ],         
             ]
         
         ); 
 
-        $builder->add('save', SubmitType::class);
+        $builder->add('Confirmer', SubmitType::class);
                
         }
         public function configureOptions(OptionsResolver $resolver)
