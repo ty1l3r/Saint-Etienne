@@ -22,9 +22,7 @@ class SelectionType extends AbstractType
                     'Un Rendez-vous & Manifestations' => 'rdv',
                     '"Ma Paroisse" le dernier numéro' => 'maParoisse' ,     
                 ],         
-            ]
-        
-        ); 
+            ]); 
 
         $builder->add('Confirmer', SubmitType::class);
                

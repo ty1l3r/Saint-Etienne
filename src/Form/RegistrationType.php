@@ -41,9 +41,7 @@ class RegistrationType extends ApplicationType
                     'Fermaincourt' => 'Fermaincourt',
                     'Garancières-en-Drouais' => 'Garancières-en-Drouais' ,
                 ], 
-            ])
-           
-        ;
+            ]);
     }
     public function configureOptions(OptionsResolver $resolver)
     {

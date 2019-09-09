@@ -3,7 +3,6 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -40,9 +39,7 @@ class AccountType extends ApplicationType
                     'Fermaincourt' => 'Fermaincourt',
                     'Garancières-en-Drouais' => 'Garancières-en-Drouais' ,
                 ], 
-            ])
-           
-        ;
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

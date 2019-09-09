@@ -12,10 +12,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Datas;
 use App\Entity\Selection;
-use App\Entity\SelectionImages;
 use App\Form\FormCheckType;
 use App\Form\SelectionType;
+use App\Form\TexteSeulType;
+use App\Entity\SelectionImages;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -48,7 +50,7 @@ class PublicationController extends AbstractController
             }
             if($selections == ('texte'))
             {
-                return $this->redirectToRoute('formTexteSeul');
+                return $this->redirectToRoute('texteSeulStep2');
             }
             if($selections == ('texteEtImg'))
             {
@@ -87,14 +89,14 @@ class PublicationController extends AbstractController
         if ($form2->isSubmitted() && $form2->isValid()) {  
 
             $selectionImage = $request->request->get('form_check'); 
-            $selectionImage = $selectionImage['selections'];
+                                $selectionImage = $selectionImage['selections'];
             if($selectionImage == ('paysage'))
             {
-                return $this->redirectToRoute('form-choice-paysage');
+                         return $this->redirectToRoute('form-choice-paysage');
             }
             if($selectionImage == ('portrait'))
             {
-                return $this->redirectToRoute('form-choice-portrait');
+                                return $this->redirectToRoute('form-choice-portrait');
             }
         }
         return $this->render('publication/imageSeulForm1.html.twig', [
@@ -102,36 +104,7 @@ class PublicationController extends AbstractController
             'selectionImage' => $selectionImage
         ]);
     } 
-    /**
-     * @Route("/admin/create/formulaire-image-paysage", name="form-choice-paysage")
-     */
-    public function imageSeulFormPaysage(){
-
-        return $this->render('Forms/imageSeulFormPaysage.html.twig', [
-            
-        ]);
-    }  
-    /**
-     * @Route("/admin/create/formulaire-image-portrait", name="form-choice-portrait")
-     */
-    public function imageSeulFormPortrait(){
-        return $this->render('Forms/imageSeulFormPortrait.html.twig', [        
-        ]);
-    }  
-    
-/**===================================================================
- *=================           TEXTES SEULS           =================
- *====================================================================*/
-
-    /**
-     * @Route("/admin/create-texte-seul", name="formTexteSeul")
-     */
-    public function texteSeulForm(){
-        return $this->render('Forms/texteSeul.htm.twig', [
-            
-        ]);
-    }            
-
+   
 /**===================================================================
  *=================         TEXTES ET IMAGES         =================
  *====================================================================*/
@@ -164,26 +137,7 @@ class PublicationController extends AbstractController
             'selectionImage' => $selectionImage
         ]);
     } 
-    /**
-     * @Route("/admin/create/formulaire-ti-paysage", name="texteEtImagesForm-Paysage")
-     */
-    public function textesEtImageFormPaysage(){
-
-        return $this->render('Forms/texteEtImageFormPaysage.html.twig', [
-            
-        ]);
-    }  
-    /**
-     * @Route("/admin/create/formulaire-i&t-portrait", name="texteEtImagesForm-Portrait")
-     */
-    public function textesEtImageFormPortrait(){
-        return $this->render('Forms/texteEtImageFormPortrait.html.twig', [        
-        ]);
-    }    
-    /**
-     * @Route("/admin/create/formulaire-texte", name="form-texteSeul")
-     */
-
+ 
 /**===================================================================
 *=================                RDV                =================
 *====================================================================*/
@@ -216,35 +170,5 @@ class PublicationController extends AbstractController
             'selectionImage' => $selectionRDV
         ]);
     } 
-    /**
-     * @Route("/admin/create/formulaire-rdv-paysage", name="rdv-Form-Paysage")
-     */
-    public function rdvFormPaysage(){
-
-        return $this->render('Forms/rdvFormPaysage.html.twig', [
-            
-        ]);
-    }  
-    /**
-     * @Route("/admin/create/formulaire-rdv-portrait", name="rdv-Form-Portrait")
-     */
-    public function trdvFormPortrait(){
-        return $this->render('Forms/rdvFormPortrait.html.twig', [        
-        ]);
-    }    
-/**===================================================================
-*=================           MA PAROISSE                ==============
-*====================================================================*/
-
-    /**
-     * @Route("/admin/create/formulaire-ma-paroisse", name="form-paroisse")
-     */
-    public function paroisseForm(){
-        return $this->render('Forms/maParoisse.html.twig', [
-            
-        ]);
-    }   
-
-
 
 } //EO ALL

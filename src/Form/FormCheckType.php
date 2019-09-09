@@ -18,14 +18,10 @@ class FormCheckType extends AbstractType
                 'Image Paysage' => 'paysage',
                 'Image Portrait' => 'portrait',        
             ],         
-        ]
-    
-    ); 
+        ]); 
 
-    $builder->add('Confirmer', SubmitType::class);
-    
+    $builder->add('Confirmer', SubmitType::class); 
     }
-    
     
     public function configureOptions(OptionsResolver $resolver)
     {
