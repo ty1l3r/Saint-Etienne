@@ -34,15 +34,19 @@ class PublicationController extends AbstractController
     public function index(Request $request)
     {   
         $selections = new Selection();
+
         $form = $this->createForm(SelectionType::class);
         $form->handleRequest($request, $selections);
         dump($form);
-        
+          
         
         if ($form->isSubmitted() && $form->isValid()) {
             
-            $selections = $request->request->get('selection'); 
-            $selections = $selections['selection'];
+            $data = $form->getData();
+            $selections = $data['selection'];
+
+            // $selections = $request->request->get('selection'); 
+            // $selections = $selections['selection'];
     
             if($selections == ('image'))
             {
@@ -88,8 +92,13 @@ class PublicationController extends AbstractController
     
         if ($form2->isSubmitted() && $form2->isValid()) {  
 
+            // $data = $form->getData();
+            // $selections = $data['selection'];    
+
             $selectionImage = $request->request->get('form_check'); 
-                                $selectionImage = $selectionImage['selections'];
+            $selectionImage = $selectionImage['selections'];
+
+
             if($selectionImage == ('paysage'))
             {
                          return $this->redirectToRoute('form-choice-paysage');
