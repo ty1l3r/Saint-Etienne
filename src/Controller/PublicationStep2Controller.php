@@ -60,21 +60,29 @@ class PublicationStep2Controller extends AbstractController
         if (!$imgSeulPaysage) {
             $imgSeulPaysage = new Datas(); 
         }
-
+    
     $form = $this->createForm(ImageSeulPaysageType::class, $imgSeulPaysage);
     $form->handleRequest($request);
 
-    if($form->isSubmitted() && $form->isValid()){    
-        $imgSeulPaysage->setAuthor($this->getUser());
-        $imgSeulPaysage->setRendu(5);
-        $imgSeulPaysage->setCreatedAt(new \DateTime());
+    if($form->isSubmitted() && $form->isValid()){ 
 
-        $manager->persist($imgSeulPaysage);
-        $manager->flush();
-        $this->addFlash(
-            'success',
-            "           Votre annonce a bien été enregistré !");
-        return $this->redirectToRoute('home');
+    $imgSeulPaysage->setAuthor($this->getUser());
+    $imgSeulPaysage->setRendu(5);
+    $imgSeulPaysage->setCreatedAt(new \DateTime());
+  
+    $manager->persist($imgSeulPaysage);
+    // dump($imgSeulPaysage);
+
+    // $imgSeulPaysage->setImgPaysage($this->getImageName());
+ 
+    
+    
+
+    $manager->flush();
+    $this->addFlash(
+        'success',
+        "           Votre annonce a bien été publié !");
+    return $this->redirectToRoute('home');
     }
     {
         return $this->render('Forms/imageSeulFormPaysage.html.twig', [
@@ -231,6 +239,8 @@ class PublicationStep2Controller extends AbstractController
         $texteImgPortrait->setAuthor($this->getUser());
         $texteImgPortrait->setRendu(6);
         $texteImgPortrait->setCreatedAt(new \DateTime());
+        // $texteImgPortrait->setImageName($this->getImageName());
+     
 
         $manager->persist($texteImgPortrait);
         $manager->flush();
@@ -262,6 +272,7 @@ if($form->isSubmitted() && $form->isValid()){
     $texteImgPaysage->setAuthor($this->getUser());
     $texteImgPaysage->setRendu(6);
     $texteImgPaysage->setCreatedAt(new \DateTime());
+
 
     $manager->persist($texteImgPaysage);
     $manager->flush();

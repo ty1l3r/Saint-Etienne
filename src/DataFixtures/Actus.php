@@ -39,7 +39,10 @@ $adminUser->setFirstName('Admin')
         ->setLastName('')
         ->setEmail('a@a.com')
         ->setHash($this->encoder->encodePassword($adminUser, 'password'))
-        ->addUserRole($adminRole);
+        ->addUserRole($adminRole)
+        ->setSexe('Homme')
+        ->setEglise('Toutes');
+
      $manager->persist($adminUser);  
 
 
@@ -59,21 +62,22 @@ for ($i = 1; $i <= 10; $i++) {
      $sexe = $faker->randomElement($sexes);
      $eglise = $faker->randomElement($eglises);
  
+    $hash = $this->encoder->encodePassword($user,'password');
 
-        $hash = $this->encoder->encodePassword($user,'password');
-
-        $user->setfirstName($faker->firstname($genre))
+    $user->setfirstName($faker->firstname($genre))
              ->setLastName($faker->lastname)
              ->setHash($hash)
              ->setEmail($faker->email)
              ->setSexe($sexe)
              ->setEglise($eglise);
+          
+
         $manager->persist($user);
         $users[] = $user;
 }
 
 // Nous géron les annonces
-        for ($i = 1; $i <= 34; $i++) {
+        for ($i = 1; $i <= 8; $i++) {
 
             $datas = new Datas();
             $widthPortrait=600;

@@ -2,9 +2,6 @@
     <div class="card-body">
 
 
-
-
-
         <div class="col-md-12 col-lg-12 col-xl-12">
                 <h4 class="text-primary" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(18,64,111);margin-bottom: -3px;">{{renduAll.title}}</h4>
                 <h4 class="text-primary" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(0,0,0);font-size: 12px;">posté le
@@ -15,10 +12,11 @@
         </div>
 
         <div class="row" style="margin-top: 20px;">
-            <div class="col-md-12 col-lg-12 col-xl-12 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-start" style="margin-top: 8px;margin-bottom: 10px;"><img class="img-fluid img-responsive" src="{{renduAll.imgPaysage}}" style="margin-top: -3px;" />
+            <div class="col-md-12 col-lg-12 col-xl-12 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-start" style="margin-top: 8px;margin-bottom: 10px;">
+                    <!-- Constraints image Paysage -->
+                <img class="img-fluid img-responsive" src="{{app.request.basepath}}/images/uploads/{{renduAll.imageName}}" style="margin-top: -3px; max-width:600px" />
+                    <!-- ========================= -->
         </div>
-
-
 
         </div>
     </div>
