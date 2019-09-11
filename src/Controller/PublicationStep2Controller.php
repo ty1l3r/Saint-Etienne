@@ -130,24 +130,18 @@ class PublicationStep2Controller extends AbstractController
 
     if($form->isSubmitted() && $form->isValid()){  
         
-        $file = $form['pdf']->getData();
-        $destination = $this->getParameter('kernel.project_dir').'/public/uploads/docs';
-
-        $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-        $newFilename = $originalFilename.'-'.uniqid().'.'.$file->guessExtension();
-
-        $file->move(
-            $destination,
-            $newFilename
-        );
+       
+        $file = $maParoisse->getName();
+        $fileName = md5(uniqid()).'.'.$file->guessExtension();
+        $file->move($this->getParameter('upload_directory'), $fileName);
         
-       
-       
+
+        $maParoisse->setName($fileName);
         $maParoisse->setAuthor($this->getUser());
         $maParoisse->setRendu(6);
         $maParoisse->setCreatedAt(new \DateTime());
         $maParoisse->setPdf($file);
-        // $maParoisse->setPdf($this->getPdf());
+ 
 
         $manager->persist($maParoisse);
         $manager->flush();

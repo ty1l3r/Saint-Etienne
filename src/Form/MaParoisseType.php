@@ -22,7 +22,7 @@ class MaParoisseType extends ApplicationType
         ->add('subTitle', TextType::class, $this->getConfiguration("Sous-titre", "Décrivrez en quelques mots votre actualité"))
         ->add('content', TextareaType::class, $this->getConfiguration("Contenu", "Un commentaire à propos de cet édition ?"))
         ->add('imageFile', VichImageType::class,$this->getConfiguration("une phoo de couverture ?", "Veuillez télécharger votre fichier"))
-        ->add('pdf', FileType::class,$this->getConfiguration("Joindre votre version numérique", "Veuillez télécharger votre fichier pdf"),
+        ->add('name', FileType::class,$this->getConfiguration("Joindre votre version numérique", "Veuillez télécharger votre fichier pdf"),
         ['mapped' => false])
         ->add('Confirmer', SubmitType::class);
         ;

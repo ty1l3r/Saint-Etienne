@@ -118,6 +118,11 @@ class Datas
      */
     private $author;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $name;
+
     //================BUNDLE UPDATE
 
     /**
@@ -312,6 +317,18 @@ class Datas
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
 
         return $this;
     }
