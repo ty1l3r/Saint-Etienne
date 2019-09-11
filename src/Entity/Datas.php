@@ -9,6 +9,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\DatasRepository")
  * @Vich\Uploadable
@@ -24,6 +25,12 @@ class Datas
      * @var File
      */
     private $imageFile;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * 
+     */
+    private $pdf;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=false)
@@ -98,10 +105,7 @@ class Datas
      */
     private $lien;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $pdf;
+
 
     /**
      * @ORM\Column(type="float")

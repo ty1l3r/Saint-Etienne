@@ -28,7 +28,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PublicationController extends AbstractController
 {   
     /**
-     * @Route("/admin/create-etape-1", name="accueil")
+     * @Route("/admin/create-etape-1", name="form")
      * 
      */
     public function index(Request $request)

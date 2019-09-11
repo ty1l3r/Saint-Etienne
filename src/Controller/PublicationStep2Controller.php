@@ -69,15 +69,7 @@ class PublicationStep2Controller extends AbstractController
     $imgSeulPaysage->setAuthor($this->getUser());
     $imgSeulPaysage->setRendu(5);
     $imgSeulPaysage->setCreatedAt(new \DateTime());
-  
     $manager->persist($imgSeulPaysage);
-    // dump($imgSeulPaysage);
-
-    // $imgSeulPaysage->setImgPaysage($this->getImageName());
- 
-    
-    
-
     $manager->flush();
     $this->addFlash(
         'success',
@@ -136,10 +128,26 @@ class PublicationStep2Controller extends AbstractController
     $form = $this->createForm(MaParoisseType::class, $maParoisse);
     $form->handleRequest($request);
 
-    if($form->isSubmitted() && $form->isValid()){    
+    if($form->isSubmitted() && $form->isValid()){  
+        
+        $file = $form['pdf']->getData();
+        $destination = $this->getParameter('kernel.project_dir').'/public/uploads/docs';
+
+        $originalFilename = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $newFilename = $originalFilename.'-'.uniqid().'.'.$file->guessExtension();
+
+        $file->move(
+            $destination,
+            $newFilename
+        );
+        
+       
+       
         $maParoisse->setAuthor($this->getUser());
         $maParoisse->setRendu(6);
         $maParoisse->setCreatedAt(new \DateTime());
+        $maParoisse->setPdf($file);
+        // $maParoisse->setPdf($this->getPdf());
 
         $manager->persist($maParoisse);
         $manager->flush();
