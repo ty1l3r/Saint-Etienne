@@ -180,7 +180,7 @@ class PublicationStep2Controller extends AbstractController
 
     if($form->isSubmitted() && $form->isValid()){    
         $rdvPortrait->setAuthor($this->getUser());
-        $rdvPortrait->setRendu(6);
+        $rdvPortrait->setRendu(3);
         $rdvPortrait->setCreatedAt(new \DateTime());
 
         $manager->persist($rdvPortrait);
@@ -211,7 +211,7 @@ class PublicationStep2Controller extends AbstractController
 
     if($form->isSubmitted() && $form->isValid()){    
         $rdvPaysage->setAuthor($this->getUser());
-        $rdvPaysage->setRendu(6);
+        $rdvPaysage->setRendu(4);
         $rdvPaysage->setCreatedAt(new \DateTime());
 
         $manager->persist($rdvPaysage);
@@ -246,7 +246,7 @@ class PublicationStep2Controller extends AbstractController
 
     if($form->isSubmitted() && $form->isValid()){    
         $texteImgPortrait->setAuthor($this->getUser());
-        $texteImgPortrait->setRendu(6);
+        $texteImgPortrait->setRendu(1);
         $texteImgPortrait->setCreatedAt(new \DateTime());
         // $texteImgPortrait->setImageName($this->getImageName());
      
@@ -279,7 +279,7 @@ $form->handleRequest($request);
 
 if($form->isSubmitted() && $form->isValid()){    
     $texteImgPaysage->setAuthor($this->getUser());
-    $texteImgPaysage->setRendu(6);
+    $texteImgPaysage->setRendu(2);
     $texteImgPaysage->setCreatedAt(new \DateTime());
 
 

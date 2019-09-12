@@ -11,6 +11,7 @@ Rendre le texte du formulaire Etape 2 plus clair pour l'utilisateur
 Installer et configurer bundle liip imagine
 Ajouter icone de conection 
 Pages utilisateus
+Forumaire texte : problème de mise en page (saut de ligne etc///)
 
 
 ESSAYER DE FAIRE UN CLICK POUR AGGRANIR SUR LES IMAGES

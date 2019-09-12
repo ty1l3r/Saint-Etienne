@@ -19,6 +19,12 @@
     "behat/transliterator": {
         "version": "v1.2.0"
     },
+    "components/bootstrap": {
+        "version": "3.4.1"
+    },
+    "components/jquery": {
+        "version": "3.3.1"
+    },
     "composer/semver": {
         "version": "1.5.0"
     },
@@ -134,6 +140,9 @@
     "egulias/email-validator": {
         "version": "2.1.11"
     },
+    "eternicode/bootstrap-datepicker": {
+        "version": "v1.9.0"
+    },
     "fig/link-util": {
         "version": "1.0.0"
     },
@@ -160,6 +169,9 @@
     },
     "jms/metadata": {
         "version": "2.0.0"
+    },
+    "kriswallsmith/assetic": {
+        "version": "v1.0.5"
     },
     "liip/imagine-bundle": {
         "version": "1.8",
@@ -221,6 +233,9 @@
     },
     "psr/log": {
         "version": "1.1.0"
+    },
+    "robloach/component-installer": {
+        "version": "0.2.3"
     },
     "sensio/framework-extra-bundle": {
         "version": "5.2",

@@ -3,21 +3,25 @@
 namespace App\Form;
 
 use App\Entity\Datas;
+use App\Form\ApplicationType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
-class TexteImgPortraitType extends AbstractType
+class TexteImgPortraitType extends ApplicationType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('imgPortrait')
-            ->add('title')
-            ->add('subTitle')
-            ->add('content')
-            ->add('Confirmer', SubmitType::class);
+            ->add('imageFile', VichImageType::class,$this->getConfiguration("Votre image (Format portrait)", "Veuillez télécharger votre image")) 
+            ->add('title', TextType::class, $this->getConfiguration("Titre", "Veuillez entrer le titre de votre actualité"))
+            ->add('subTitle', TextType::class, $this->getConfiguration("Sous-titre", "Décrivrez en quelques mots votre image"))
+            ->add('content', TextareaType::class, $this->getConfiguration("Texte", "ecrivez votre contenu"))
+            ->add('Confirmer', SubmitType::class)
         ;
     }
 
