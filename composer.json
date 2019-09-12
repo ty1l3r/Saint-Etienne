@@ -29,6 +29,7 @@
         "symfony/translation": "4.3.*",
         "symfony/twig-bundle": "4.3.*",
         "symfony/validator": "4.3.*",
+        "symfony/var-dumper": "4.3.*",
         "symfony/web-link": "4.3.*",
         "symfony/yaml": "4.3.*",
         "vich/uploader-bundle": "^1.10"
@@ -39,7 +40,6 @@
         "symfony/maker-bundle": "^1.0",
         "symfony/profiler-pack": "*",
         "symfony/test-pack": "*",
-        "symfony/var-dumper": "4.3.*",
         "symfony/web-server-bundle": "4.3.*"
     },
     "config": {

@@ -130,15 +130,22 @@ class PublicationStep2Controller extends AbstractController
 
     if($form->isSubmitted() && $form->isValid()){  
         
-       
-        $file = $maParoisse->getName();
-        $fileName = md5(uniqid()).'.'.$file->guessExtension();
-        $file->move($this->getParameter('upload_directory'), $fileName);
-        
+       $file = $request->files->get('ma_paroisse')['name'];
+       $upload_directory = $this->getParameter('upload_directory');
+       $fileName = md5(uniqid()).'.'.$file->guessExtension();
 
+        try {
+            $file->move(
+                $upload_directory,
+                $fileName
+            );
+        } catch (FileException $e) {
+            // ... handle exception if something happens during file upload
+        }
+        /* sauvagarde le chemin */
         $maParoisse->setName($fileName);
         $maParoisse->setAuthor($this->getUser());
-        $maParoisse->setRendu(6);
+        $maParoisse->setRendu(7);
         $maParoisse->setCreatedAt(new \DateTime());
         $maParoisse->setPdf($file);
  
@@ -148,7 +155,7 @@ class PublicationStep2Controller extends AbstractController
         $this->addFlash(
             'success',
             "           Votre annonce a bien été enregistré !");
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('home'); 
     }
     {
         return $this->render('Forms/maParoisse.html.twig', [
