@@ -80,37 +80,43 @@ for ($i = 1; $i <= 10; $i++) {
         for ($i = 1; $i <= 8; $i++) {
 
             $datas = new Datas();
+
+            // $images = ['https://lorempixel.com/800/600/nightlife','https://lorempixel.com/600/800/nightlife/'];
             $widthPortrait=600;
             $heightPortrait=800;
             $widthPaysage=800;
             $heightPaysage=600;
+            
 
         $title = $faker->sentence($nbWords = 6);
         $imagePay = $faker->imageUrl($widthPaysage,$heightPaysage,'nightlife');
-        $imagePort = $faker->imageUrl($widthPortrait,$heightPortrait,'nightlife');
+        // $imagePort = $faker->imageUrl($widthPortrait,$heightPortrait,'nightlife');
         $rdvTime = $faker->dateTime($max = 'now');
         $subtitle = $faker->sentence($nbWords = 4);
         $createdAt = $faker->dateTime();
-        $city = $faker->address();
+        $place = $faker->country();
         $content = $faker->realText($maxNbChars = 200, $indexSize = 2);
         $lien = $faker->url();
         $file = $faker->uuid();
+        // $image = $faker->imageUrl();
 
         $user = $users[ mt_rand(0, count($users) -1)];
-     
+        
 
-        $datas->setTitle($title)
-        ->setimgPortrait($imagePort)
-        ->setimgPaysage($imagePay)
+        $datas
+        ->setTitle($title)
         ->setSubTitle($subtitle)
-        ->setPlace($city)
+        ->setPlace($place)
         ->setrdvTime($rdvTime)
         ->setcontent($content)
+        ->setImageName($imagePay)
         ->setcreatedAt($createdAt)
-        ->setLien($lien)
         ->setpdf($file)
         ->setAuthor($user)
         ->setRendu(mt_rand (1,8));
+        // ->setimgPortrait($imagePort)
+        // ->setimgPaysage($imagePay) 
+        // ->setLien($lien)
 
 
         $manager->persist($datas);

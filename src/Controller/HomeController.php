@@ -19,11 +19,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-
     /**
      *  @Route ("/", name ="home")
-     */
-    
+     */   
     public function home(ObjectManager $manager)
     {
       $renduAlls = $manager->createQuery(
@@ -38,8 +36,26 @@ class HomeController extends AbstractController
           'renduAlls' =>$renduAlls
           
         ]);
-     
-   
     }
 
+    /**
+     * Retourne à lapage d'accueil sans le carousel
+     * 
+     *  @Route ("/accueil", name ="accueil")
+     */
+    public function accueil(ObjectManager $manager)
+    {
+      $renduAlls = $manager->createQuery(
+        "SELECT u
+        FROM App\Entity\Datas u
+        ORDER BY u.createdAt DESC
+        ")
+        ->getResult();
+
+        return $this->render('home/index2.html.twig', [
+      
+          'renduAlls' =>$renduAlls
+          
+        ]); 
+    }
  }

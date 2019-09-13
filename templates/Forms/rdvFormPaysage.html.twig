@@ -5,64 +5,40 @@
 {% block body %}
 
 {% include "partials/menu.html.twig" %}
+{% include "partials/bodyTop.html.twig" %}
 
-<div class="row" id="CONTENT" style="margin: 0px;margin-left: 0px;margin-right: 0px;">
-    <div class="col-1 col-sm-1 col-md-2 col-lg-2 col-xl-2 order-1 order-sm-1 order-md-3 order-lg-1 order-xl-1"
-        id="contentColGauche" style="padding: 0px;">
-    </div>
-    <div class="col-11 col-sm-11 col-md-12 col-lg-10 col-xl-8 order-1 order-sm-1 order-md-1 order-lg-2 order-xl-2"
-        id="contentColCONTENT" style="padding: 0px;">
-        <div class="row" id="1" style="margin: 0px;margin-left: 15px;margin-right: 15px;">
+<div class="card border-dark mb-5"
+    style="background-color: #ffffff;margin-top: 121px;margin-right: 0px;margin-left: 0px;">
+    <div class="card-body mb-3" style="background-color: rgba(245,247,255,0.55);padding-right: 20px;margin-top: 0px;">
+        <div class="row" style="margin: -17px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;margin-left: 0px;">
             <div class="col">
-
-                <div class="card border-dark "
-                    style="background-color: #ffffff;margin-top: 121px;margin-right: 0px;margin-left: 0px;">
-                    <div class="card-body mb-3"
-                        style="background-color: rgba(245,247,255,0.55);padding-right: 20px;margin-top: 0px;">
-                        <div class="row"
-                            style="margin: -17px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;margin-left: 0px;">
-                            <div class="col">
-                                <div role="alert" class="alert alert-info" style="padding: 15px;">
-                                    <div class="row">
-                                        <div class="col text-center" style="font-size: 19px;"><span
-                                                style="font-size: 30px;"><strong>ETAPE N°
-                                                    2 - RDV FORM PAYSAGE</strong></span></div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col text-center"><span style="font-size: 15px;"><strong>Suivez le
-                                                    guide et postez votre nouvelle annonce !</strong></span></div>
-                                    </div>
-                                    <div class="row">
-                                     
-                                    </div>
-                                </div>
-                            </div>
+                <div role="alert" class="alert alert-info" style="padding: 15px;">
+                    <div class="row">
+                        <div class="col text-center" style="font-size: 19px;"><span
+                                style="font-size: 30px;"><strong>ETAPE N°
+                                    2 - NOUVEAU RDV - IMAGE PAYSAGE</strong></span>
                         </div>
-                        <div role="alert" class="alert alert-light text-warning">
-                            <div class="row" id="question">
-
-                                <div class="col mb-2" style="margin-bottom: -5px; font-size:20px "><span
-                                        class="text-success"><strong>Remplissez les champs</strong></span></div>
-                            </div>
-
-                            <div class="row ml-1" id="question">
-
-                                {{ form_start(form) }}
-
-                                {{ form_widget (form, {'attr': {'class' : 'FormPerso'}} ) }}
-
-                                {{ form_end(form) }}
-
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center"><span style="font-size: 15px;"><strong>Suivez le
+                                    guide et postez votre nouvelle annonce !</strong></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="col-xl-1 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3" id="contentColDroite"
-        style="padding: 0px;">
+        <div role="alert" class="alert alert-light text-warning">
+            <div class="row" id="question">
+
+                <div class="col mb-2" style="margin-bottom: -5px; font-size:20px "><span
+                        class="text-success"><strong>Remplissez les champs</strong></span></div>
+            </div>
+            <!-- Mise en forme personalisé du formulaire -->
+        {% include "partials/FormRdv.html.twig" %}
+         
+
+        </div>
     </div>
 </div>
-
+{% include "partials/bodyBot.html.twig" %}
 {% endblock %}

@@ -20,7 +20,14 @@ class TexteImgPortraitType extends ApplicationType
             ->add('imageFile', VichImageType::class,$this->getConfiguration("Votre image (Format portrait)", "Veuillez télécharger votre image")) 
             ->add('title', TextType::class, $this->getConfiguration("Titre", "Veuillez entrer le titre de votre actualité"))
             ->add('subTitle', TextType::class, $this->getConfiguration("Sous-titre", "Décrivrez en quelques mots votre image"))
-            ->add('content', TextareaType::class, $this->getConfiguration("Texte", "ecrivez votre contenu"))
+             ->add('content', TextareaType::class, 
+            [
+                'label' => 'Votre texte',
+                'attr' => [
+                    'class' =>'formTexte',
+                    'placeholder' => 'Ecrivez ou copier/coller votre texte'
+                    ],
+            ])
             ->add('Confirmer', SubmitType::class)
         ;
     }

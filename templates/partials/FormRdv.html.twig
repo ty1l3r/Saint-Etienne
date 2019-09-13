@@ -1,0 +1,40 @@
+{{form_start(form)}}
+
+             <div class="FormPerso form-group ">
+     {{form_label(form.title)}}
+     {{form_widget(form.title, {'attr': {'placeholder' : 'Donnez un titre à votre annonce'} } ) }}
+ </div>
+ <div class="FormPerso form-group ">
+     {{form_label(form.subTitle)}}
+     {{form_widget(form.subTitle, {'attr': {'placeholder' : 'résumez sommairement votre annonce'} } ) }}
+ </div>
+ <div class="formPlace form-group ">
+     {{form_label(form.place)}}
+     {{form_widget(form.place, {'attr': {'class': 'formPlaceHeight'} } ) }}
+ </div>
+ <div class="formPerso form-group ">
+     {{form_label(form.rdvTime) }}
+
+     <div class="row" style='margin-left:2px'>
+         <p class='pt-3 mr-2 mb-0'>Le</p>
+         {{form_widget(form.rdvTime.date.day, {'attr': {'class': 'FormPersoDate'} } ) }}
+         {{form_widget(form.rdvTime.date.month, {'attr': {'class': 'FormPersoDate'} } ) }}
+         {{form_widget(form.rdvTime.date.year, {'attr': {'class': 'FormPersoDate'} } ) }}
+         <p class='pt-3 ml-2 mr-2 mb-0'>à</p>
+         {{form_widget(form.rdvTime.time, {'attr': {'class': ''} } ) }}
+     </div>
+ </div>
+ <div class="formPlace form-group ">
+     {{form_row(form.content, {'attr': {'class': 'formTexteRdv'} } ) }}
+ </div>
+
+  <div class="FormPerso form-group ">
+     {{form_label(form.imageFile)}}
+     {{form_widget(form.imageFile, {'attr': {'placeholder' : 'résumez sommairement votre annonce'} } ) }}
+ </div>
+ <div class="FormPerso form-group ">
+    
+     {{form_widget(form.Confirmer) }}
+ </div>
+          
+        {{form_end(form)}} 

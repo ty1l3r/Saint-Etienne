@@ -13,15 +13,27 @@ body {
     width: 200%;
     height: 200px !important;
   }
+  .formTexteRdv{
+    width: 200%;
+    height: 180px !important;
+  }
+  .formTexte{
+     width: 200%;
+    height: 300px !important;
+  }
    .formPlace{
-    width: 100%;
-    height: 100px !important;
+    width: 600px !important;
+  }
+  .formPlaceHeight{
+    height :90px !important
   }
   
   .FormPerso{
-    width: 600px;
+    width: 600px !important;
   }
-
+   .FormPersoDate{
+    width: 100px !important;
+  }
 
   #confsucces {
     margin-top: 12%;

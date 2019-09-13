@@ -40,7 +40,7 @@ class PublicationStep2Controller extends AbstractController
         $this->addFlash(
             'success',
             "           Votre annonce a bien été enregistré !");
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('accueil');
     }
     {
         return $this->render('Forms/texteSeul.html.twig', [
@@ -74,7 +74,7 @@ class PublicationStep2Controller extends AbstractController
     $this->addFlash(
         'success',
         "           Votre annonce a bien été publié !");
-    return $this->redirectToRoute('home');
+    return $this->redirectToRoute('accueil');
     }
     {
         return $this->render('Forms/imageSeulFormPaysage.html.twig', [
@@ -105,7 +105,7 @@ class PublicationStep2Controller extends AbstractController
         $this->addFlash(
             'success',
             "           Votre annonce a bien été enregistré !");
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('accueil');
     }
     {
         return $this->render('Forms/imageSeulFormPortrait.html.twig', [
@@ -155,7 +155,7 @@ class PublicationStep2Controller extends AbstractController
         $this->addFlash(
             'success',
             "           Votre annonce a bien été enregistré !");
-        return $this->redirectToRoute('home'); 
+        return $this->redirectToRoute('accueil'); 
     }
     {
         return $this->render('Forms/maParoisse.html.twig', [
@@ -188,7 +188,7 @@ class PublicationStep2Controller extends AbstractController
         $this->addFlash(
             'success',
             "           Votre annonce a bien été enregistré !");
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('accueil');
     }
     {
         return $this->render('Forms/rdvFormPortrait.html.twig', [
@@ -219,7 +219,7 @@ class PublicationStep2Controller extends AbstractController
         $this->addFlash(
             'success',
             "           Votre annonce a bien été enregistré !");
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('accueil');
     }
     {
         return $this->render('Forms/rdvFormPaysage.html.twig', [
@@ -256,7 +256,7 @@ class PublicationStep2Controller extends AbstractController
         $this->addFlash(
             'success',
             "           Votre annonce a bien été enregistré !");
-        return $this->redirectToRoute('home');
+        return $this->redirectToRoute('accueil');
     }
     {
         return $this->render('Forms/texteEtImageFormPortrait.html.twig', [
@@ -288,7 +288,7 @@ if($form->isSubmitted() && $form->isValid()){
     $this->addFlash(
         'success',
         "           Votre annonce a bien été enregistré !");
-    return $this->redirectToRoute('home');
+    return $this->redirectToRoute('accueil');
 }
 {
     return $this->render('Forms/texteEtImageFormPaysage.html.twig', [
