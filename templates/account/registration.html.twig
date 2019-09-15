@@ -4,42 +4,29 @@
 
 {% block body %}
 
+{% include "partials/menu.html.twig" %}
+{% include "partials/bodyTop.html.twig" %}
+
+<div class="card border-dark" style="background-color: #ffffff;margin-top: 15%;margin-bottom:50px">
+    <div class="card-body">
+        <div class="row" style="margin-top: 15px;">
+            <div class="col">
 
 
-        {% include "partials/menu1.html.twig" %}
+                <!-- CONTENU-->
+                {{ form_start(form) }}
+            
+                {{ form_widget(form )}}
+                <button type="submit" class="btn btn-primary"> Valider </button>
+                {{ form_end(form) }}
 
-      <div class="row" id="1" style="margin: 0px;margin-left: 15px;margin-right: 15px; max-height:auto">
-        <div class="col">
+                <!-- EO CONTENU-->
 
-            <div class="card border-dark"
-                style="background-color: #ffffff;margin-top: 15%;margin-bottom:50px">
-                <div class="card-body">
-                    <div class="row" style="margin-top: 15px;">
-                        <div class="col">
-
-
-                        <!-- CONTENU-->
-    {{ form_start(form) }}
-    {{ form_widget(form )}}
-    <button type="submit" class="btn btn-primary"> Valider </button>
-    {{ form_end(form) }}
-
-    <div class="row">
-    
-    </div>
-                        
-                        <!-- EO CONTENU-->
-
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
 </div>
-<div class="col-xl-1 order-3 order-sm-3 order-md-3 order-lg-3 order-xl-3" id="contentColDroite" style="padding: 0px;">
-</div>
-</div>
+{% include "partials/bodyBot.html.twig" %}
 
 <!-- ======================-->
 

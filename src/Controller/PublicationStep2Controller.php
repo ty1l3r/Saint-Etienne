@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Datas;
 use App\Form\MesseType;
 use App\Form\TexteSeulType;
+use App\Service\MaParoisse;
 use App\Form\MaParoisseType;
 use App\Form\RdvPaysageType;
 use App\Form\RdvPortraitType;
@@ -339,19 +340,13 @@ if($form->isSubmitted() && $form->isValid()){
      * SELECTION   
      * @Route("/admin/create-messe", name="messe")
      */
-     public function messeForm(Request $request, ObjectManager $manager, Datas $imageName =null) {
+     public function messeForm(Request $request, ObjectManager $manager, Datas $imageName =null, MaParoisse $maParoisse) {
 
     if (!$imageName) {
         $imageName = new Datas(); 
     }
-     
         $form2 = $this->createForm(MesseType::class, $imageName);
         $form2->handleRequest($request);
-         $renduLasts = $manager->createQuery(
-        "SELECT u FROM App\Entity\Datas u
-        WHERE u.id ='36'
-        ")
-        ->getResult();
     
         if ($form2->isSubmitted() && $form2->isValid()) {  
 
@@ -363,44 +358,13 @@ if($form->isSubmitted() && $form->isValid()){
       $this->addFlash(
         'success',
         "           Votre annonce a bien été enregistré !");
-    return $this->redirectToRoute('messes');         
-     
-   
+    return $this->redirectToRoute('messes');            
         }
         return $this->render('Forms/messeForm.html.twig', [
-            'form' => $form2->createView() ,
-            'renduLasts' =>$renduLasts
-            
+            'form' => $form2->createView() ,     
         ]);
     } 
 
 
-    /**
-     *  
-     * @Route("/horaire-des-messes", name="messes")
-     */
-     public function messe(Request $request, ObjectManager $manager, Datas $imageName =null) {
-
-        $renduAlls = $manager->createQuery(
-        "SELECT u
-        FROM App\Entity\Datas u
-        WHERE u.rendu = '9'
-        ORDER BY u.createdAt DESC
-        ")
-        ->getResult();
-
-          $renduLasts = $manager->createQuery(
-        "SELECT u FROM App\Entity\Datas u
-        WHERE u.id ='36'
-        ")
-        ->getResult();
-
-    return $this->render('content/messe.html.twig', [
-            
-             'renduAlls' =>$renduAlls,
-              'renduLasts' =>$renduLasts
-        ]);
-
-     }
 
 }

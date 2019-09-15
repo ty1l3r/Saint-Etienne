@@ -8,7 +8,11 @@ body {
     text-align: left;
     background-color: #fff;
   }
-
+.containerFooter{
+  width: 75%;
+      margin-left: auto;
+    margin-right: auto;
+}
 .textAlign{
   text-align: center
 }

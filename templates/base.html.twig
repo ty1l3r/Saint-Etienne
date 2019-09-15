@@ -38,7 +38,7 @@
 
     <!-- Déclartion des messages flash-->
         {% for label, messages in app.flashes %}
-            <div class="container">
+            <div class="container mb-1">
             <div class="alert alert-{{ label }}" id="confsucces">
                {% for message in messages %}
                    <p id="pconfsucces">{{message}}</p>
