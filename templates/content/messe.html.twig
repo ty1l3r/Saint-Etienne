@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'actualités{% endblock %}
+
+{% block body %}
+
+{% include "partials/menu.html.twig" %}
+{% include "partials/bodyTop.html.twig" %}
+
+<div class="alert-info" style="margin:5px; padding:5px"><h1>Horaires des messes</h1></div>
+
+
+<div class="alert-info mb-1" style="margin:5px; padding:5px">
+<div class="row ml-1"><h3>Jour après jour</h3> </div>
+<br>
+<div class="row ml-1 mt-1">
+ <p>Lectures &gt; <a href="https://levangileauquotidien.org/FR/gospel">Ici</a> &lt;</p>
+</div>
+<div class="row ml-1">
+ <p> Commentaire de Marie-Noëlle Thabut &gt; <a href="https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/le-dimanche-jour-du-seigneur/commentaires-de-marie-noelle-thabut/">Ici</a> &lt;</p>
+</div>
+
+
+
+</div>
+
+{% for renduAll in renduAlls  %}
+
+                <div class="card border-dark mb-5 mt-0"
+                    style="background-color: #ffffff;margin-top: 121px;margin-right: 0px;margin-left: 0px;">
+                    <div class="card-body mb-3"
+                        style="background-color: rgba(245,247,255,0.55);padding-right: 20px;margin-top: 0px;">
+
+
+                   
+ <img style ="max-height:400px"class="img-fluid img-responsive" src="{{app.request.basepath}}/uploads/img/{{renduAll.imageName}}" onclick="window.open(this.src,'_blank','toolbar=0, location=0, directories=0, status=0, scrollbars=0, resizable=0, copyhistory=0, menuBar=0, width='+this.width+', height='+this.height);" />
+                   
+                    </div>
+                </div>
+ {% endfor %}
+{% include "partials/bodyBot.html.twig" %}
+{% endblock %}

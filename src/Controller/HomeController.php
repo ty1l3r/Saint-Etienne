@@ -31,9 +31,16 @@ class HomeController extends AbstractController
         ")
         ->getResult();
 
+        $renduLasts = $manager->createQuery(
+        "SELECT u FROM App\Entity\Datas u
+        WHERE u.id ='36'
+        ")
+        ->getResult();
+     
         return $this->render('home/index.html.twig', [
       
-          'renduAlls' =>$renduAlls
+          'renduAlls' =>$renduAlls,
+          'renduLasts' =>$renduLasts
           
         ]);
     }
@@ -52,10 +59,22 @@ class HomeController extends AbstractController
         ")
         ->getResult();
 
+        $renduLasts = $manager->createQuery(
+        "SELECT u FROM App\Entity\Datas u
+        WHERE u.rendu ='7'
+        ")
+        ->getResult();
+      
+      
+
         return $this->render('home/index2.html.twig', [
       
-          'renduAlls' =>$renduAlls
+          'renduAlls' => $renduAlls,
+          'renduLasts' => $renduLasts
           
         ]); 
     }
+
+  
+  
  }

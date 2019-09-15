@@ -3,7 +3,7 @@
     <head>
     {% block head %}     
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
         <title>{% block title %}Paroisse Saint-Étienne en Drouais{% endblock %}</title>
         <meta property="og:image" content="img/Logo-St-Etienne.png">
         <meta name="description" content="Retrouvez, sur ce site, toutes les informations sur la vie de la Paroisse catholique de Dreux et du Drouais !
@@ -25,6 +25,8 @@
         <link rel="stylesheet" href="../../../css/Navigation-Clean.css">
         <link rel="stylesheet" href="../../../css/Navigation-with-Search.css">
         <link rel="stylesheet" href="../../../css/styles.css">
+        <link rel="stylesheet" href="../../../css/footer-Clean.css">
+         <link rel="stylesheet" href="../../../css/hover.css">
         <link rel="stylesheet" href="../../../css/Google-Style-Login.css">
 
     </head>
@@ -36,7 +38,7 @@
 
     <!-- Déclartion des messages flash-->
         {% for label, messages in app.flashes %}
-            <div class="container" style="">
+            <div class="container">
             <div class="alert alert-{{ label }}" id="confsucces">
                {% for message in messages %}
                    <p id="pconfsucces">{{message}}</p>
@@ -48,9 +50,9 @@
 
         {% block body %}{% endblock %}
         
-  <script src="../../js/jquery.min.js"></script>
-    <script src="../../bootstrap/js/bootstrap.min.js"></script>
-    <script src="../../js/bs-animation.js"></script>
+  <script src="../../../js/jquery.min.js"></script>
+    <script src="../../../bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../../js/bs-animation.js"></script>
         {% block javascripts %}{% endblock %}
 
     </body>

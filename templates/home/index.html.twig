@@ -23,6 +23,8 @@
                         {% include "home/-maParoisse.html.twig" %}
                         {% elseif renduAll.rendu == 8 %}
                         {% include "home/-texte.seul.html.twig" %}
+                        {% elseif renduAll.rendu == 9 %}
+                        {% include "home/-messe.html.twig" %}
                     {% endif %}
                 {% endfor %}
 {% include "partials/bodyBot.html.twig" %}

@@ -24,15 +24,24 @@ class RdvPortraitType extends ApplicationType
             ->add('title', TextType::class, $this->getConfiguration("Titre", "Veuillez entrer le titre de votre actualité"))
             ->add('subTitle', TextType::class, $this->getConfiguration("Sous-titre", "Décrivrez en quelques mots votre image"))
             ->add('place', TextareaType::class, array('attr' => array('class' =>'formPlace')),$this->getConfiguration("Lieu de l'évenement", "Ya t'il ue addresse de rendez-vous")) 
-            ->add('rdvTime', DateTimeType::class, array('attr' => array('class' =>'formAnnee')), $this->getConfiguration("Date de l\'evenement", "Ya t'il ue addresse de rendez-vous"), array(
-
-            'date_widget' => 'single_text',
-            'date_format' => 'dd.MM.yyyyTH:i',
-            'html5' => false,
-                
-            ))
-         
-            ->add('content', TextareaType::class, array('attr' => array('class' =>'formTexte')), $this->getConfiguration("Lieu de l'évenement", "Ya t'il ue addresse de rendez-vous"))
+            ->add('rdvTime', DateTimeType::class, 
+                [
+                    'label' => 'Date & horraires',
+                    'attr' =>[
+                        'class' =>'formHeure',                      
+                        'date_widget' => 'single_text',
+                        // 'date_format' => 'dd.MM.yyyyTH:i',
+                        // 'html5' => false,  
+                        ]   
+                ])    
+             ->add('content', TextareaType::class, 
+                [
+                    'label' => 'Votre texte',
+                    'attr' => [
+                        
+                        'placeholder' => 'Ecrivez ou copier/coller votre texte'
+                        ],
+                ])
             ->add('Confirmer', SubmitType::class);
         
     }

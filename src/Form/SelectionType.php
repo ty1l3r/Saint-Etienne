@@ -20,7 +20,9 @@ class SelectionType extends AbstractType
                     'Un texte seul' => 'texte',
                     'Un texte accompagné d\'une image' => 'texteEtImg',
                     'Un Rendez-vous & Manifestations' => 'rdv',
-                    '"Ma Paroisse" le dernier numéro' => 'maParoisse' ,     
+                    'Horaire des messes' => 'messe',  
+                    '"Ma Paroisse" le dernier numéro' => 'maParoisse' , 
+              
                 ],         
             ]); 
 

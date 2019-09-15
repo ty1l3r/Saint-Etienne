@@ -9,16 +9,19 @@ body {
     background-color: #fff;
   }
 
+.textAlign{
+  text-align: center
+}
   .formTexte{
-    width: 200%;
+    width: 100%;
     height: 200px !important;
   }
   .formTexteRdv{
-    width: 200%;
+    width: 100%;
     height: 180px !important;
   }
   .formTexte{
-     width: 200%;
+    max-width: 100%;
     height: 300px !important;
   }
    .formPlace{

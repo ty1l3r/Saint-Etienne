@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Horaires messes{% endblock %}
+
+{% block body %}
+
+{% include "partials/menu.html.twig" %}
+{% include "partials/bodyTop.html.twig" %}
+
+<div class="card border-dark mb-5"
+    style="background-color: #ffffff;margin-top: 121px;margin-right: 0px;margin-left: 0px;">
+    <div class="card-body mb-3" style="background-color: rgba(245,247,255,0.55);padding-right: 20px;margin-top: 0px;">
+        <div class="row" style="margin: -17px;margin-top: 0px;margin-right: 0px;margin-bottom: 0px;margin-left: 0px;">
+            <div class="col">
+                <div role="alert" class="alert alert-info" style="padding: 15px;">
+                    <div class="row">
+                        <div class="col text-center" style="font-size: 19px;"><span
+                                style="font-size: 30px;"><strong>POSTER LES NOUVEAUX HORAIRES DE MESSE</strong></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-center"><span style="font-size: 15px;"><strong>Suivez le
+                                    guide et postez votre nouvelle annonce !</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div role="alert" class="alert alert-light text-warning">
+            <div class="row" id="question">
+
+                <div class="col mb-2" style="margin-bottom: -5px; font-size:20px "><span
+                        class="text-success"><strong>Remplissez les champs</strong></span></div>
+            </div>
+            <!-- Mise en forme personalisé du formulaire -->
+             {{ form_start(form) }}
+                    {{ form_widget (form, {'attr': {'class' : 'FormPerso'}} ) }}
+                    {{ form_end(form) }}
+         
+
+        </div>
+    </div>
+</div>
+{% include "partials/bodyBot.html.twig" %}
+{% endblock %}

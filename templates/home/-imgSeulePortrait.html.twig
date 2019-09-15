@@ -1,25 +1,25 @@
 <div class="card border-dark" id="infoImgPaysage" style="background-color: #ffffff;margin-top: 10px;margin-right: 0px;">
     <div class="card-body">
-
-
-
-
-
         <div class="col-md-12 col-lg-12 col-xl-12">
-                <h4 class="text-primary" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(18,64,111);margin-bottom: -3px;">{{renduAll.title}}</h4>
-                <h4 class="text-primary" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(0,0,0);font-size: 12px;">posté le
-            {{renduAll.createdAt | date('d/m/Y')}} à {{renduAll.createdAt | date('H:i')}}</h4>
-                <hr />
-                <h6 class="text-secondary mb-2" style="font-family: 'Roboto Condensed', sans-serif;color: rgb(24,133,230);margin-bottom: 64px;padding-right: 15px;"><strong>  {{renduAll.subTitle}}</strong></h6>
-          
+            <h4 class="text-primary"
+                style="font-family: 'Roboto Condensed', sans-serif;color: rgb(18,64,111);margin-bottom: -3px;">
+                {{renduAll.title}}</h4>
+            <h4 class="text-primary"
+                style="font-family: 'Roboto Condensed', sans-serif;color: rgb(0,0,0);font-size: 12px;">posté le
+                {{renduAll.createdAt | date('d/m/Y')}} à {{renduAll.createdAt | date('H:i')}}</h4>
+            <hr />
+            <h6 class="text-secondary mb-2"
+                style="font-family: 'Roboto Condensed', sans-serif;color: rgb(24,133,230);margin-bottom: 64px;padding-right: 15px;">
+                <strong> {{renduAll.subTitle}}</strong></h6>
         </div>
-
         <div class="row" style="margin-top: 20px;">
-            <div class="col-md-12 col-lg-12 col-xl-12 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-start" style="margin-top: 8px;margin-bottom: 10px;"><img class="img-fluid img-responsive imgPortrait1" src="{{app.request.basepath}}/uploads/img/{{renduAll.imageName}}" style="margin-top: -3px;" />
-        </div>
-
-
-
+            <div class="col-md-12 col-lg-12 col-xl-12 d-flex d-sm-flex d-lg-flex d-xl-flex justify-content-center justify-content-sm-center justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-start"
+                style="margin-top: 8px;margin-bottom: 10px;"> 
+    <img class="img-fluid img-responsive"
+            src="{{app.request.basepath}}/uploads/img/{{renduAll.imageName}}"
+            style="max-width:500px"
+            onclick="window.open(this.src,'_blank','toolbar=0, location=0, directories=0, status=0, scrollbars=0, resizable=0, copyhistory=0, menuBar=0, width='+this.width+', height='+this.height);" />
+            </div>
         </div>
     </div>
 </div>

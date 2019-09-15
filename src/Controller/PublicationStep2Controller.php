@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Datas;
+use App\Form\MesseType;
 use App\Form\TexteSeulType;
 use App\Form\MaParoisseType;
 use App\Form\RdvPaysageType;
@@ -29,6 +30,12 @@ class PublicationStep2Controller extends AbstractController
         if (!$texteSeul) {
             $texteSeul = new Datas(); 
         }
+       $renduLasts = $manager->createQuery(
+        "SELECT u FROM App\Entity\Datas u
+        WHERE u.id ='36'
+        ")
+        ->getResult();
+
     $form = $this->createForm(TexteSeulType::class, $texteSeul);
     $form->handleRequest($request);
     if($form->isSubmitted() && $form->isValid()){    
@@ -44,7 +51,8 @@ class PublicationStep2Controller extends AbstractController
     }
     {
         return $this->render('Forms/texteSeul.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'renduLasts' =>$renduLasts
         ]);
     }
 }
@@ -177,6 +185,11 @@ class PublicationStep2Controller extends AbstractController
 
     $form = $this->createForm(RdvPortraitType::class, $rdvPortrait);
     $form->handleRequest($request);
+       $renduLasts = $manager->createQuery(
+        "SELECT u FROM App\Entity\Datas u
+        WHERE u.id ='36'
+        ")
+        ->getResult();
 
     if($form->isSubmitted() && $form->isValid()){    
         $rdvPortrait->setAuthor($this->getUser());
@@ -192,7 +205,8 @@ class PublicationStep2Controller extends AbstractController
     }
     {
         return $this->render('Forms/rdvFormPortrait.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'renduLasts' =>$renduLasts
         ]);
     }
 }
@@ -208,6 +222,11 @@ class PublicationStep2Controller extends AbstractController
 
     $form = $this->createForm(RdvPaysageType::class, $rdvPaysage);
     $form->handleRequest($request);
+       $renduLasts = $manager->createQuery(
+        "SELECT u FROM App\Entity\Datas u
+        WHERE u.id ='36'
+        ")
+        ->getResult();
 
     if($form->isSubmitted() && $form->isValid()){    
         $rdvPaysage->setAuthor($this->getUser());
@@ -223,7 +242,8 @@ class PublicationStep2Controller extends AbstractController
     }
     {
         return $this->render('Forms/rdvFormPaysage.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'renduLasts' =>$renduLasts
         ]);
     }
 }
@@ -244,6 +264,12 @@ class PublicationStep2Controller extends AbstractController
     $form = $this->createForm(TexteImgPortraitType::class, $texteImgPortrait);
     $form->handleRequest($request);
 
+         $renduLasts = $manager->createQuery(
+        "SELECT u FROM App\Entity\Datas u
+        WHERE u.id ='36'
+        ")
+        ->getResult();
+
     if($form->isSubmitted() && $form->isValid()){    
         $texteImgPortrait->setAuthor($this->getUser());
         $texteImgPortrait->setRendu(1);
@@ -260,7 +286,9 @@ class PublicationStep2Controller extends AbstractController
     }
     {
         return $this->render('Forms/texteEtImageFormPortrait.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'renduLasts' =>$renduLasts,
+            
         ]);
     }
 }
@@ -276,6 +304,11 @@ class PublicationStep2Controller extends AbstractController
 
 $form = $this->createForm(TexteImagePaysageType::class, $texteImgPaysage);
 $form->handleRequest($request);
+      $renduLasts = $manager->createQuery(
+        "SELECT u FROM App\Entity\Datas u
+        WHERE u.id ='36'
+        ")
+        ->getResult();
 
 if($form->isSubmitted() && $form->isValid()){    
     $texteImgPaysage->setAuthor($this->getUser());
@@ -292,11 +325,82 @@ if($form->isSubmitted() && $form->isValid()){
 }
 {
     return $this->render('Forms/texteEtImageFormPaysage.html.twig', [
-        'form' => $form->createView()
+        'form' => $form->createView(),
+        'renduLasts' =>$renduLasts
     ]);
 }
 }
 
+/**===================================================================
+*=================                Messe               =================
+*====================================================================*/
 
+    /**
+     * SELECTION   
+     * @Route("/admin/create-messe", name="messe")
+     */
+     public function messeForm(Request $request, ObjectManager $manager, Datas $imageName =null) {
+
+    if (!$imageName) {
+        $imageName = new Datas(); 
+    }
+     
+        $form2 = $this->createForm(MesseType::class, $imageName);
+        $form2->handleRequest($request);
+         $renduLasts = $manager->createQuery(
+        "SELECT u FROM App\Entity\Datas u
+        WHERE u.id ='36'
+        ")
+        ->getResult();
+    
+        if ($form2->isSubmitted() && $form2->isValid()) {  
+
+    $imageName->setAuthor($this->getUser());
+    $imageName->setRendu(9);
+    $imageName->setCreatedAt(new \DateTime());
+        $manager->persist($imageName);
+    $manager->flush();
+      $this->addFlash(
+        'success',
+        "           Votre annonce a bien été enregistré !");
+    return $this->redirectToRoute('messes');         
+     
+   
+        }
+        return $this->render('Forms/messeForm.html.twig', [
+            'form' => $form2->createView() ,
+            'renduLasts' =>$renduLasts
+            
+        ]);
+    } 
+
+
+    /**
+     *  
+     * @Route("/horaire-des-messes", name="messes")
+     */
+     public function messe(Request $request, ObjectManager $manager, Datas $imageName =null) {
+
+        $renduAlls = $manager->createQuery(
+        "SELECT u
+        FROM App\Entity\Datas u
+        WHERE u.rendu = '9'
+        ORDER BY u.createdAt DESC
+        ")
+        ->getResult();
+
+          $renduLasts = $manager->createQuery(
+        "SELECT u FROM App\Entity\Datas u
+        WHERE u.id ='36'
+        ")
+        ->getResult();
+
+    return $this->render('content/messe.html.twig', [
+            
+             'renduAlls' =>$renduAlls,
+              'renduLasts' =>$renduLasts
+        ]);
+
+     }
 
 }

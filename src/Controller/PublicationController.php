@@ -13,6 +13,7 @@
 namespace App\Controller;
 
 use App\Entity\Datas;
+use App\Form\MesseType;
 use App\Entity\Selection;
 use App\Form\FormCheckType;
 use App\Form\SelectionType;
@@ -67,6 +68,10 @@ class PublicationController extends AbstractController
             if($selections == ('maParoisse'))
             {
                 return $this->redirectToRoute('form-paroisse');
+            }
+               if($selections == ('messe'))
+            {
+                return $this->redirectToRoute('messe');
             }
 
         }
@@ -179,5 +184,7 @@ class PublicationController extends AbstractController
             'selectionImage' => $selectionRDV
         ]);
     } 
+
+
 
 } //EO ALL
