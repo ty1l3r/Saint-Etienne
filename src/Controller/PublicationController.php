@@ -35,20 +35,15 @@ class PublicationController extends AbstractController
     public function index(Request $request)
     {   
         $selections = new Selection();
-
         $form = $this->createForm(SelectionType::class);
         $form->handleRequest($request, $selections);
         dump($form);
-          
-        
+       
         if ($form->isSubmitted() && $form->isValid()) {
             
             $data = $form->getData();
             $selections = $data['selection'];
 
-            // $selections = $request->request->get('selection'); 
-            // $selections = $selections['selection'];
-    
             if($selections == ('image'))
             {
                 return $this->redirectToRoute('imageSeuleForm');
@@ -73,7 +68,6 @@ class PublicationController extends AbstractController
             {
                 return $this->redirectToRoute('messe');
             }
-
         }
         return $this->render('publication/step1.html.twig', [
             'form' => $form->createView() ,  

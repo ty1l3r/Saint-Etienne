@@ -275,9 +275,7 @@ class PublicationStep2Controller extends AbstractController
         $texteImgPortrait->setAuthor($this->getUser());
         $texteImgPortrait->setRendu(1);
         $texteImgPortrait->setCreatedAt(new \DateTime());
-        // $texteImgPortrait->setImageName($this->getImageName());
-     
-
+   
         $manager->persist($texteImgPortrait);
         $manager->flush();
         $this->addFlash(

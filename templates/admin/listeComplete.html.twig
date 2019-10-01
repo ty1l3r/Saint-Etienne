@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administration des actualités{% endblock %}
+
+{% block body %}
+
+<!-- TABLE DES INCLUDES = 1°) NAVBAR / 2°) TOPBAR / 3°) FOOTER-->
+
+{% include "partials/adminNavBar.html.twig" %}
+{% include "partials/adminTopBar.html.twig" %}
+
+<!-- CONTENT -->
+<table class="container-fluid">
+    <h1 class="ml-2">LISTE DES ANNONCES</h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Contenu</th>
+                <th scope="col">image</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for ad in ads %}
+            <tr class="table-info">
+
+                <td>
+                    <span class="badge badge-primary rounded">{{ad.id}}</span>
+                </td>
+                <td>{{ad.createdAt | date('d/m/y') }}</td>
+                <td>{{ad.title}}</td>
+                <td>{{ad.content}}</td>
+                <td><img class=""
+                         src="{{app.request.basepath}}/uploads/img/{{ad.imageName}}"
+                         onclick="window.open(this.src,'_blank','toolbar=0, location=0, directories=0, status=0, scrollbars=0,resizable=0, copyhistory=0, menuBar=0, width='+width+', height='+height);"
+                         style="max-width: 300px" /></td>
+                <td style="width:10%">
+                    <a href=""
+                       class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                    <a href=""
+                       class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% include "partials/adminFooter.html.twig" %}
+
+    {% endblock %}

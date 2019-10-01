@@ -5,28 +5,37 @@
 <!--CAROUSEL-->
 {% include "partials/carousel.html.twig" %}
 <!--Eo Carousel-->
+<div class="row ml-2 mr-1 annonces">
+    <h4>Retrouvez, sur ce site, toutes les informations sur la vie de la Paroisse catholique de Dreux et du Drouais !
+(Aunay-sous-Crécy, Broué, Charpont, Chérisy, Crécy-Couvé, Ecluzelles, Fermaincourt, Garancières-en-Drouais, Garnay, 
+Germainville, La Chapelle Forainvilliers, Luray, Mézières, Montreuil, Saulnières, Ste Gemme Moronval, Tréon et Vernouillet)</h4>
+</div>
+
 {% include "partials/bodyTop.html.twig" %}
-                {% for renduAll in renduAlls  %}
-                    {% if renduAll.rendu == 1 %}
-                        {% include "home/-infoImgPortrait.html.twig" %}
-                        {% elseif renduAll.rendu == 2 %}
-                        {% include "home/-infoImgPaysage.html.twig" %}
-                        {% elseif renduAll.rendu == 3 %}
-                        {% include "home/-rdvImgPortrait.html.twig" %}
-                        {% elseif renduAll.rendu == 4 %}
-                        {% include "home/-rdvImgPaysage.html.twig" %}
-                        {% elseif renduAll.rendu == 5 %}
-                        {% include "home/-imgSeulePaysage.html.twig" %}
-                        {% elseif renduAll.rendu == 6 %}
-                        {% include "home/-imgSeulePortrait.html.twig" %}
-                        {% elseif renduAll.rendu == 7 %}
-                        {% include "home/-maParoisse.html.twig" %}
-                        {% elseif renduAll.rendu == 8 %}
-                        {% include "home/-texte.seul.html.twig" %}
-                        {% elseif renduAll.rendu == 9 %}
-                        {% include "home/-messe.html.twig" %}
-                    {% endif %}
-                {% endfor %}
+<div class="row ml-2 annonces" >
+    <h1 class="titreActu" style="margin-top:-67px">Actualités</h1>
+</div>
+    {% for renduAll in renduAlls  %}
+        {% if renduAll.rendu == 1 %}
+            {% include "home/-infoImgPortrait.html.twig" %}
+            {% elseif renduAll.rendu == 2 %}
+            {% include "home/-infoImgPaysage.html.twig" %}
+            {% elseif renduAll.rendu == 3 %}
+            {% include "home/-rdvImgPortrait.html.twig" %}
+            {% elseif renduAll.rendu == 4 %}
+            {% include "home/-rdvImgPaysage.html.twig" %}
+            {% elseif renduAll.rendu == 5 %}
+            {% include "home/-imgSeulePaysage.html.twig" %}
+            {% elseif renduAll.rendu == 6 %}
+            {% include "home/-imgSeulePortrait.html.twig" %}
+            {% elseif renduAll.rendu == 7 %}
+            {% include "home/-maParoisse.html.twig" %}
+            {% elseif renduAll.rendu == 8 %}
+            {% include "home/-texte.seul.html.twig" %}
+            {% elseif renduAll.rendu == 9 %}
+            {% include "home/-messe.html.twig" %}
+        {% endif %}
+    {% endfor %}
 {% include "partials/bodyBot.html.twig" %}
 
 

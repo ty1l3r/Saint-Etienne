@@ -1,99 +1,168 @@
 body {
-    margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #212529;
-    text-align: left;
-    background-color: #fff;
-  }
-.containerFooter{
-  width: 75%;
-      margin-left: auto;
-    margin-right: auto;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
 }
-.textAlign{
+.titreActu{
+  margin-left: 42.9%;
+  border:1px double #000000;
+  padding: 5px;
+
+  
+
+}
+.typo {
+  text-rendering: geometricPrecision !important;
+}
+.annonces{
+  font: caption;
+  font-size: 12px;
+  color: rgb(44, 123, 191);
+  font-style: italic;
+  margin-top: 10px;
+  text-align: center;
+}
+.fond {
+  background-color: #18181b94;
+  text-rendering: geometricPrecision !important;
+  width: 100%;
+  /* position: fixed; */
+  left: auto !important;
+  right: auto !important;
+  padding-bottom: 5px !important;
+  height: 17% !important;
+  padding-top: 7px !important;
+}
+
+.titre {
+  /* margin-bottom: 36%;
+  margin-top: -150px; */
+  color: rgb(44, 123, 191) !important;
+  text-shadow: #a3dae7 0.8px 0.8px, #a3dae7 -0.8px 0.8px, #a3dae7 -0.8px -0.8px, #a3dae7 0.8px -0.8px !important;
+  font: Helvetica Neue;
+  font-size: 50px;
+  text-rendering: geometricPrecision;
+  margin-top: 5px;
+  /* background-color: #e2f0fdd9; */
+  /* z-index: 2 !important;
+  top: 30% !important;
+  height: 100px; */
+
+}
+
+.textes {
+  text-shadow: #000000 1.5px 1.5px, #000000 -1.5px 1.5px, #000000 -1.5px -1.5px, #000000 1.5px -1.5px;
+  font-size: 35px;
+  color: rgb(216, 231, 240);
+  text-rendering: geometricPrecision;
+}
+
+.containerFooter {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textAlign {
   text-align: center
 }
-  .formTexte{
-    width: 100%;
-    height: 200px !important;
-  }
-  .formTexteRdv{
-    width: 100%;
-    height: 180px !important;
-  }
-  .formTexte{
-    max-width: 100%;
-    height: 300px !important;
-  }
-   .formPlace{
-    width: 600px !important;
-  }
-  .formPlaceHeight{
-    height :90px !important
-  }
-  
-  .FormPerso{
-    width: 600px !important;
-  }
-   .FormPersoDate{
-    width: 100px !important;
-  }
 
-  #confsucces {
-    margin-top: 12%;
-    margin-left: 19%;
-  }
+.formTexte {
+  width: 100%;
+  height: 200px !important;
+}
 
-  #pconfsucces {
-    text-align: center;
-  }
+.formTexteRdv {
+  width: 100%;
+  height: 180px !important;
+}
 
-  .img-responsive{
-    max-width: 100%;
-    -ms-interpolation-mode: bicubic;
-    image-rendering: optimizeQuality;  
-  }
-  .imgPortrait{
-    max-width: 300px;
+.formTexte {
+  max-width: 100%;
+  height: 300px !important;
+}
+
+.formPlace {
+  width: 600px !important;
+}
+
+.formPlaceHeight {
+  height: 90px !important
+}
+
+.FormPerso {
+  width: 600px !important;
+}
+
+.FormPersoDate {
+  width: 100px !important;
+}
+
+#confsucces {
+  margin-top: 12%;
+  margin-left: 19%;
+}
+
+#pconfsucces {
+  text-align: center;
+}
+
+.img-responsive {
+  max-width: 100%;
+  -ms-interpolation-mode: bicubic;
+  image-rendering: optimizeQuality;
+}
+
+.imgPortrait {
+  max-width: 300px;
+  max-height: auto;
+}
+
+/*  MEDIA QUERIES IMG */
+
+@media (max-width:767px) {
+  .imgPortrait {
+    max-width: 400px;
     max-height: auto;
   }
+}
 
-  @media (max-width:767px) {
-    .imgPortrait{
-      max-width: 400px;
-      max-height: auto;
-    }
-  }
-
-  @media (min-width:1400px) {
-    .imgPortrait{
-      max-width: 400px;
-      max-height: auto;
-    }
-  }
-
-  .imgPortrait1{
-    max-width: 300px;
+@media (min-width:1400px) {
+  .imgPortrait {
+    max-width: 400px;
     max-height: auto;
   }
+}
 
-  @media (max-width:767px) {
-    .imgPortrait1{
-      max-width: 400px;
-      max-height: auto;
-    }
+.imgPortrait1 {
+  max-width: 300px;
+  max-height: auto;
+}
+
+@media (max-width:767px) {
+  .imgPortrait1 {
+    max-width: 400px;
+    max-height: auto;
   }
+}
 
-  @media (min-width:1400px) {
-    .imgPortrait1{
-      max-width: 500px;
-      max-height: auto;
-    }
+@media (min-width:1400px) {
+  .imgPortrait1 {
+    max-width: 500px;
+    max-height: auto;
   }
- 
-  
+}
 
-  
+/*  MEDIA QUERIES TITRE */
+
+@media (min-width:1400px) and (max-width: 1500px) {
+  .titres {
+    max-width: 500px;
+    max-height: auto;
+  }
+}

@@ -13,7 +13,7 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  color:rgb(0, 0, 0);
+  color:rgb(255, 255, 255);
   opacity:0;
   filter:invert(0); /* antibug si effet sur a-img */
   transition:opacity .8s;
@@ -23,7 +23,7 @@
 
 /* les couleurs c1 et c2 */
 .c1{
-    background:#ffffffb2; /* avec alpha */
+    background:#000000c4; /* avec alpha */
     max-height: 75px;
     max-width: 75px
 }
@@ -32,8 +32,8 @@
 /* le survol */
 .a-txt:hover{
   opacity:1;
-  max-height: 74px;
-  max-width: 74px;
+  max-height: 75px;
+  max-width: 75px;
   padding: 2px
 }
 .a-img-txt:hover .a-img{
