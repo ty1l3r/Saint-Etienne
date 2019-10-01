@@ -10,6 +10,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 class TexteSeulType extends ApplicationType
 {
@@ -18,7 +19,7 @@ class TexteSeulType extends ApplicationType
         $builder
             ->add('title', TextType::class, $this->getConfiguration("Titre", "Veuillez entrer le titre de votre actualité"))
             ->add('subTitle', TextType::class, $this->getConfiguration("Sous-titre", "Décrivrez en quelques mots votre anonnce"))
-            ->add('content', TextareaType::class, 
+            ->add('content', CKEditorType::class, 
             [
                 'label' => 'Votre texte',
                 'attr' => [
