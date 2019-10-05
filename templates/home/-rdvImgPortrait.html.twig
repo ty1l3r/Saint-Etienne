@@ -50,9 +50,10 @@
                 <h6 class="text-secondary mb-2"
                     style="font-family: 'Roboto Condensed', sans-serif;color: rgb(24,133,230);margin-bottom: 64px;padding-right: 15px;">
                     <strong>{{renduAll.subtitle}}</strong></h6>
-                <p class="border rounded border-info" id="content"
-                    style="margin-bottom: 7px;padding: 10px;padding-right: 10px;margin-right: 15px;">
-                    {{renduAll.content}}<br /></p>
+                      <div class="order-1"
+                     id="content"
+                     style="">{{renduAll.content | raw}}<br />
+                </div>
             </div>
         </div>
     </div>

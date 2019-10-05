@@ -48,7 +48,7 @@ class PublicationStep2Controller extends AbstractController
         $this->addFlash(
             'success',
             "           Votre annonce a bien été enregistré !");
-        return $this->redirectToRoute('accueil');
+        return $this->redirectToRoute('home');
     }
     {
         return $this->render('Forms/texteSeul.html.twig', [
@@ -83,7 +83,7 @@ class PublicationStep2Controller extends AbstractController
     $this->addFlash(
         'success',
         "           Votre annonce a bien été publié !");
-    return $this->redirectToRoute('accueil');
+    return $this->redirectToRoute('home');
     }
     {
         return $this->render('Forms/imageSeulFormPaysage.html.twig', [
