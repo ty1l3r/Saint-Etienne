@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Datas;
 use App\Form\ApplicationType;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -34,7 +35,7 @@ class RdvPortraitType extends ApplicationType
                         // 'html5' => false,  
                         ]   
                 ])    
-             ->add('content', TextareaType::class, 
+             ->add('content', CKEditorType::class, 
                 [
                     'label' => 'Votre texte',
                     'attr' => [

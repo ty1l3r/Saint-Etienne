@@ -3,3 +3,15 @@
 twig:
     form_themes:
         - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+# config/packages/fos_ck_editor.yaml
+fos_ck_editor:
+    input_sync: true
+    configs:
+        full_config:
+            height: '500px'
+            width: 'auto'
+            language: fr
+            toolbar:
+                - { name: "styles", items: [ 'Undo', 'Redo', '-','Bold', 'Italic','Underline', 'Strike','Blockquote','Smiley', '-','JustifyLeft','JustifyCenter','JustifyRight', 'JustifyBlock', '-','BulletedList','NumberedList', '-','Link','Image','Table','SpecialChar','Font','FontSize','TextColor','BGColor'] }
+
+

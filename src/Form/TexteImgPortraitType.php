@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Datas;
 use App\Form\ApplicationType;
 use Symfony\Component\Form\AbstractType;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,7 +21,7 @@ class TexteImgPortraitType extends ApplicationType
             ->add('imageFile', VichImageType::class,$this->getConfiguration("Votre image (Format portrait)", "Veuillez télécharger votre image")) 
             ->add('title', TextType::class, $this->getConfiguration("Titre", "Veuillez entrer le titre de votre actualité"))
             ->add('subTitle', TextType::class, $this->getConfiguration("Sous-titre", "Décrivrez en quelques mots votre image"))
-             ->add('content', TextareaType::class, 
+             ->add('content', CKEditorType::class, 
             [
                 'label' => 'Votre texte',
                 'attr' => [
